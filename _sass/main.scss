@@ -1,3 +1,40 @@
 .current {
     color: green;
   }
+
+header {
+    background-color: #1c2124;
+    color: #e1e1e1;
+    text-align: center;
+    padding: 25px 0;
+    
+}
+
+main {
+    background-color: rgb(102, 106, 112);
+    width: 700px;
+    color: #e1e1e1;
+    padding: 25px;
+    border: solid 3px rgb(75, 140, 156);
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+body {
+    background-color: #333;
+    color: #e1e1e1;
+}
+
+footer {
+    background-color: #1c2124;
+    color: #e1e1e1;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+a:link, a:visited {
+  color: #e1e1e1;
+}
