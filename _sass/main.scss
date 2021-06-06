@@ -19,16 +19,21 @@ header {
     font-size: 1.5rem;
 }
 
-header a:active {
+header a {
+  padding: 2px 1px 0;;
   color: #e1e1e1;
 }
 
-header a:visited{
-  color: #e1e1e1;
-}
-
-header a:hover {
+header a:hover, a:focus {
   color: #c2c2c2;
+}
+
+header a:visited {
+  color: #0c0c0c;
+}
+
+header a:active{
+  color: #5f5f5f;
 }
 
 .footer {
