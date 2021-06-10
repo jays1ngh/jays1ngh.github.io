@@ -17,7 +17,7 @@ h1,h2,h3,p {
 }
 
 h1 {
-
+  margin:0;
 }
 
 h2 {
@@ -29,7 +29,7 @@ h3 {
 }
 
 p {
-
+  
 }
 
 strong {
@@ -41,9 +41,19 @@ a {
 }
 
 .site-title {
+  color: #ececec;
 }
 
-.subtitle {
+.site-main-title {
+  margin: 0;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.site-subtitle {
+  margin: 0;
+  font-size: .75rem;
 }
 
 
@@ -57,13 +67,16 @@ a {
 }
 
 .container-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; /*default value */
 
 }
 
 header {
   text-align: center;
   background-color: #597FA4;
-  padding: .5em 0;
+  padding: 0 0 .25em 0;
 }
 
 
@@ -73,6 +86,10 @@ header {
       Navigation
 ===================== */
 
+nav {
+  
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -81,7 +98,9 @@ nav ul {
 }
 
 nav li {
-  margin: 0 1em;
+  margin-left: 2em;
+  /*Centres the navigation buttons
+  margin: 0 1em; */
 }
 
 
