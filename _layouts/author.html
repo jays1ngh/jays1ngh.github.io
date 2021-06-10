@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
-<div class="author-bio">
-  <h2>{{ page.name }}</h2>
-  <h3>{{ page.position }}</3>
-        {{ content }}
-      </div>
+<div class="container">
+  <div class="author-bio">
+    <h2>{{ page.name }}</h2>
+    <h3>{{ page.position }}</3>
+          {{ content }}
+        </div>
 
-<div class="author-posts">
-<h2>Post by this author</h2>
-                {%- assign author_posts = site.posts
-                  | where: "author", page.short_name
-                -%}
-                {%- for post in author_posts -%}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-                {%- endfor -%}
-              </div>
+  <div class="author-posts">
+  <h2>Post by this author</h2>
+                  {%- assign author_posts = site.posts
+                    | where: "author", page.short_name
+                  -%}
+                  {%- for post in author_posts -%}
+                  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                  {%- endfor -%}
+                </div>
+</div>
