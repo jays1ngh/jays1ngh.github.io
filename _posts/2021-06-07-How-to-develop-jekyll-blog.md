@@ -2,7 +2,7 @@
 layout: post
 author: jays1ngh
 ---
-## This is a test post
+This is a test post
 
 ###This text has been copied from Word with =rand(3,4) command
 
