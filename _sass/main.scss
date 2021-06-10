@@ -54,6 +54,7 @@ a {
 .site-subtitle {
   margin: 0;
   font-size: .75rem;
+  margin-bottom: .50em;
 }
 
 
@@ -76,7 +77,7 @@ a {
 header {
   text-align: center;
   background-color: #597FA4;
-  padding: 0 0 .25em 0;
+  padding: 0;
 }
 
 
@@ -101,6 +102,28 @@ nav li {
   margin-left: 2em;
   /*Centres the navigation buttons
   margin: 0 1em; */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ececec;
+  font-weight: 700;
+  padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #c9c9c9;
+}
+
+.site-main-title a {
+  color: #ececec;
+  text-decoration: none;
+}
+
+.site-main-title a:hover,
+.site-main-title a:focus {
+  color: #c9c9c9;
 }
 
 
