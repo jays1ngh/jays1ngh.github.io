@@ -9,13 +9,19 @@
             <h1 class="site-main-title"><a href="/">{{site.title}}</a></h1>
             <p class="site-subtitle">{{site.subtitle}}</p>
         </div>
-        
+
         <nav>
             <ul>
-                <li><a href="/" class="current-page">Home</a></li>
+                {% for i in site.urls %}
+                <!-- <li><a href="/" class="current-page">Home</a></li>
                 <li><a href="{{site.url}}{{site.baseurl}}/blog/">Blog</a></li>
-                <li><a href="{{site.url}}{{site.baseurl}}/about">About</a></li>
+                <li><a href="{{site.url}}{{site.baseurl}}/about">About</a></li> -->
+                <li>
+                    <a href="{{ site.url}}{{site.baseurl}}{{ i.url }}">
+                        {{ i.text }}</a>
+                </li>
+                {% endfor %}
             </ul>
         </nav>
-    
+
     </div> <!-- / .container -->

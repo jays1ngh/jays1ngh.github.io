@@ -3,6 +3,14 @@ subtitle: Learn by doing
 url: "" # the base url and protocol e.g https://blog.masteringmdm.com
 baseurl: "" # subpath of your site, e.g /blog
 
+# Navigation
+urls:
+    - text: Home
+      url: /
+    - text: About
+      url: /about
+    - text: Blog
+      url: /blog
 
 collections:
   authors:
