@@ -3,7 +3,7 @@ layout: post
 title: "Add category to Jekyll post"
 summary: "Learn how to add category to a Jekyll post"
 author: jays1ngh
-category: jekyll
+categories: jekyll
 thumbnail: /assets/img/posts/#1 add category to jekyll post/jekyll.png
 permalink: /blog/add-category-to-jekyll-post
 ---
