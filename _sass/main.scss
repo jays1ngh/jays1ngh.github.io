@@ -37,7 +37,7 @@ h3 {
 }
 
 p {
-  
+
 }
 
 strong {
@@ -97,7 +97,7 @@ header {
 ===================== */
 
 nav {
-  
+
 }
 
 nav ul {
@@ -109,7 +109,7 @@ nav ul {
 
 nav li {
   margin-left: 2em;
-  
+
   /*Centres the navigation buttons
   margin: 0 1em; */
 }
@@ -154,3 +154,10 @@ nav a:focus {
   text-align: center;
 }
 
+
+/* ==================
+  Posts Page*/
+
+.post-category {
+  margin-bottom: 2rem;
+}
