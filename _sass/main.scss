@@ -97,9 +97,9 @@ a {
 
 .sidebar-secondary h2 {
   font-weight: 700;
-  font-size: 1.15em;
+  font-size: 1em;
   color: #3579bb;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -110,6 +110,11 @@ a {
 .sidebar-secondary a:hover,
 .sidebar-secondary a:focus {
   color: #3579bb;
+}
+
+// This is applied on the Categories widget title
+.categories-all-widget h2 {
+  margin-top: 1rem;
 }
 
 /* ==================
@@ -149,7 +154,7 @@ header {
   max-width: 20%;
 }
 
-.latest-posts-blog {
+.recent-posts-blog {
   border-bottom: 1px solid #979797;
 }
 
