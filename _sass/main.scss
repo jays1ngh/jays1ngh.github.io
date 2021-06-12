@@ -89,6 +89,20 @@ header {
   margin-bottom: 2rem;
 }
 
+// Blog Page
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-main {
+  max-width: 75%;
+}
+
+.sidebar-secondary {
+  max-width: 20%;
+}
+
 
 
 
