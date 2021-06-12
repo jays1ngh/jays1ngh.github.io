@@ -5,7 +5,7 @@ layout: default
   <!-- This loops through the paginated posts -->
   {% for post in paginator.posts %}
     <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="author">
+    <p>
       <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
     </p>
     <div class="content">
@@ -36,4 +36,30 @@ layout: default
       <span class="next ">Next</span>
     {% endif %}
   </div>
+
+  <!-- Recent Articles -->
+<div>
+  <h1>Latest Posts</h1>
+{% for post in site.posts limit:5 %}
+<p><a href="{{ post.url }}">{{ post.title }}</a></p>
+{% endfor %}
+</div>
+
+<!-- Categories -->
+<!-- This can be displayed as unordered list -->
+<h1>Categories</h1>
+<div id="categories">
+  {% for category in site.categories %}
+    <div class="category-box" >
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div id="#{{ category_name | slugize }}"></div>
+      <h4 class="category-head"><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name }}</a></h4>
+      <a name="{{ category_name | slugize }}"></a>
+       {% for post in site.categories[category_name] %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+  </div>
+
 </div> <!-- /container -->
+
