@@ -10,7 +10,11 @@ layout: default
     </p>
     <div class="content">
       {{ post.summary }}
-      <p>{{post.excerpt}}</p>
+      <!-- <p>{{post.excerpt}}</p> -->
+    </div>
+    <!-- Read more button -->
+    <div>
+      <a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
     </div>
   {% endfor %}
 
