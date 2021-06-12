@@ -65,6 +65,52 @@ a {
   margin-bottom: .50em;
 }
 
+// Blog
+
+.blog-container h1 {
+  color: #3579bb;
+}
+
+.blog-container h2 {
+
+}
+
+.blog-container a {
+  color: #3579bb;
+  text-decoration: none;
+}
+
+.blog-container a:hover,
+.blog-container a:focus {
+  color: #4d4d4d;
+}
+
+.sidebar-main h2 {
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+.sidebar-secondary p {
+  margin: 0 0 .5rem 0;
+  padding: 0 0 .5rem 0;
+}
+
+.sidebar-secondary h2 {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: #3579bb;
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+}
+
+.sidebar-secondary a {
+  color: #4d4d4d;
+}
+
+.sidebar-secondary a:hover,
+.sidebar-secondary a:focus {
+  color: #3579bb;
+}
 
 /* ==================
       Layout
@@ -103,6 +149,30 @@ header {
   max-width: 20%;
 }
 
+.latest-posts-blog {
+  border-bottom: 1px solid #979797;
+}
+
+.recent-posts-name-widget {
+  border-bottom: .5px solid #d3d3d3;
+}
+
+.recent-posts-name-widget:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.categories-blog-widget-title {
+  border-bottom: 1px solid #979797;
+}
+
+.category-name-widget {
+  border-bottom: .5px solid #d3d3d3;
+}
+
+.category-name-widget:last-child {
+  border: 0;
+}
 
 
 
