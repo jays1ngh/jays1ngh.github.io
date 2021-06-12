@@ -1,6 +1,9 @@
 ---
 layout: post
 author: jays1ngh
+categories: jekyll
+date: 2021-05-23
+thumbnail: /assets/img/posts/ms-forms.png
 ---
 Something strange happened and all of a sudden I could not find my personal/all Microsoft forms on forms.microsoft.com and I looked everywhere to figure out where my all Microsoft forms were stored.
 

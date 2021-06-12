@@ -1,6 +1,9 @@
 ---
 layout: post
 author: jays1ngh
+categories: jekyll
+date: 2021-05-29
+thumbnail: /assets/img/posts/lorem-ipsum-3.png
 ---
 
 Where can I get some Lorem Ipsum?

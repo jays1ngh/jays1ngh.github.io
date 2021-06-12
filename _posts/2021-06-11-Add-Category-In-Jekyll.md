@@ -4,7 +4,8 @@ title: "Add category to Jekyll post"
 summary: "Learn how to add category to a Jekyll post"
 author: jays1ngh
 categories: jekyll
-thumbnail: /assets/img/posts/#1 add category to jekyll post/jekyll.png
+date: 2021-05-28
+thumbnail: "/assets/img/posts/add-category-jekyll.png"
 permalink: /blog/add-category-to-jekyll-post
 ---
 This is a test post to check how the category page will work

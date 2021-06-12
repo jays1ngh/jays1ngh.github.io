@@ -4,6 +4,8 @@ summary: "There are many variations of passages of Lorem Ipsum available, but th
 title: "How to use post excerpts"
 author: jays1ngh
 categories: jekyll blog
+date: 2021-05-09
+thumbnail: /assets/img/posts/how-to-add-post-excerpts.png
 permalink: /blog/how-to-use-post-excerpt
 # excerpt_separator: <!--more-->
 ---
