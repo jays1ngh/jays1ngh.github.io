@@ -3,68 +3,103 @@ layout: default
 ---
 <div class="container blog-container">
   <div class="sidebar-main">
-      <div class="post-card">
-      
-          <!-- This loops through the paginated posts -->
-          {% for post in paginator.posts %}
-          <div class="post-card-outer">
-          <div class="post-title">
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <div class="post-card">
+
+      <!-- This loops through the paginated posts -->
+      {% for post in paginator.posts %}
+      <div class="post-card-outer">
+        <div class="post-title">
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        </div>
+
+        <div class=post-card-inner>
+          <div class="post-media">
+            <img class="post-img" src="{{site.url}}{{site.baseurl}}{{ post.thumbnail }}" alt="{{ post.title }}">
           </div>
 
-          <div class=post-card-inner>
-            <div class="post-media">
-              <img class="post-img" src="{{site.url}}{{site.baseurl}}{{ post.thumbnail }}" alt="{{ post.title }}">
+          <div class="post-content-all">
+            <div class="post-meta">
+              <span>{% assign author = site.authors | where: 'short_name', post.author | first %}
+                {% if author %}
+                <a href="{{ author.url }}">{{ author.name }}</a>
+                {% endif %}
+              </span>
+              <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span>{% if post %} {% assign categories = post.categories %} {% else %} {%
+                assign categories = page.categories %} {% endif %} {% for
+                category in categories %}
+                <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}">{{category}}</a>
+                {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}</span>
             </div>
-
-            <div class="post-content-all">
-              <div class="post-meta">
-                <span>{% assign author = site.authors | where: 'short_name', post.author | first %}
-                  {% if author %}
-                  <a href="{{ author.url }}">{{ author.name }}</a>
-                  {% endif %}
-                </span>
-                <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                <span>{% if post %} {% assign categories = post.categories %} {% else %} {%
-                  assign categories = page.categories %} {% endif %} {% for
-                  category in categories %}
-                  <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}">{{category}}</a>
-                  {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}</span>
+            <div class="post-content">
+              <div class="post-content-summary">{{ post.summary }}
               </div>
-              <div class="post-content">
-                <div class="post-content-summary">{{ post.summary }}
-                  </div>
-                <!-- <p>{{post.excerpt}}</p> -->
+              <!-- <p>{{post.excerpt}}</p> -->
 
-                <!-- Read more button -->
-                <div class="post-read-more"><a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
-                </div>
+              <!-- Read more button -->
+              <div class="post-read-more"><a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
               </div>
-            </div> <!-- /post-content-all -->
-          </div><!-- /post-card-inner -->
-        </div>
-          {% endfor %}
-          
+            </div>
+          </div> <!-- /post-content-all -->
+        </div><!-- /post-card-inner -->
+      </div>
+      {% endfor %}
+
     </div><!-- /post-card -->
 
     <!-- Pagination links -->
     <div class="pagination">
-      {% if paginator.previous_page %}
+      <!-- {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path }}" class="previous">
-        Previous
+        ❮
       </a>
       {% else %}
-      <span class="previous">Previous</span>
+      <span class="previous">❮</span>
       {% endif %}
       <span class="page_number ">
         {{ paginator.page }} of {{ paginator.total_pages }}
       </span>
       {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+      <a href="{{ paginator.next_page_path }}" class="next">❯</a>
       {% else %}
-      <span class="next ">Next</span>
+      <span class="next ">❯</span>
+      {% endif %} -->
+
+      <!-- Test 2 -->
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        <!-- displays first page -->
+        <a href="/blog">First</a>
+        <!-- displays previous page -->
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">❮</a>
+        {% else %}
+        <span class="previous">❮</span>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <!-- displays the page numbers -->
+        <span class=page-number>{{ page }}</span>
+        {% elsif page == 1 %}
+        <a href="/blog" class="page-number">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="page-number">
+          {{ page }}
+        </a>
+        {% endif %}
+        {% endfor %}
+        <!-- displays next page -->
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next">❯</a>
+        {% else %}
+        <span class="next">❯</span>
+        {% endif %}
+        <!-- prints last page -->
+        <a href="/blog/page/{{ paginator.total_pages }}/#/">Last</a>
+      </div>
       {% endif %}
-    </div>
+    </div> <!-- /pagination -->
   </div> <!-- /sidebar-main -->
 
   <div class="sidebar-secondary">
@@ -91,4 +126,9 @@ layout: default
     </div> <!-- /categories-all-widget -->
 
   </div> <!-- /sidebar-secondary -->
+
+  <!-- testing -->
+
+  <!-- Pagination links -->
+
 </div> <!-- /container -->

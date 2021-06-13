@@ -133,6 +133,18 @@ a {
   color: #3579bb;
 }
 
+// Pagination
+
+.previous a {
+  
+
+}
+
+.previous a:hover,
+.previous a:focus {
+
+}
+
 // This is applied on the Categories widget title
 .categories-all-widget h2 {
 
@@ -281,7 +293,7 @@ width: 25%;
 
 .previous {
   background-color: #949494;
-  padding: .25em;
+  padding:0 0.4em;
   margin: 0 .2em 0 0;
 }
 
@@ -291,13 +303,15 @@ width: 25%;
   color: #c9c9c9;
 }
 
-.page_number {
-
+.page-number {
+  background-color: #949494;
+  padding:0 0.4em;
+  margin: .25em;
 }
 
 .next {
   background-color: #949494;
-  padding: .25em;
+  padding:0 0.4em;
   margin: 0 .2em 0 0;
 }
 
