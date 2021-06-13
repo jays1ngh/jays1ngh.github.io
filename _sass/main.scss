@@ -97,6 +97,18 @@ a {
   margin-bottom: .5em;
 }
 
+.post-read-more a {
+  color: #fafafa;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.post-read-more a:hover,
+.post-read-more a:focus {
+  color: #e1e1e1;
+}
+
 // sidebar-secondary
 
 .sidebar-secondary p {
@@ -123,7 +135,7 @@ a {
 
 // This is applied on the Categories widget title
 .categories-all-widget h2 {
-  margin-top: 1em;
+
 }
 
 /* ==================
@@ -149,7 +161,9 @@ header {
   margin-bottom: 2em;
 }
 
-// Blog Page
+/* ====
+  Blog Page
+  ========*/
 .blog-container {
   display: flex;
   justify-content: space-between;
@@ -167,7 +181,7 @@ header {
 
 .post-card-outer {
   background-color: #ffffff;
-  padding: 0 .5em .5em .5em;
+  padding: .5em 1em 1em 1em;
   margin-bottom: 2em;
 }
 
@@ -201,12 +215,21 @@ width: 25%;
 }
 
 .post-content {
+}
 
+.post-content-summary {
+  margin-bottom: 1em;
 }
 
 .post-read-more {
   float: right;
-  margin-bottom: 1em;;
+  padding:0 .25em .1em .25em;
+  background-color: #597FA4;
+}
+
+.post-read-more:hover,
+.post-read-more:focus {
+  background-color: #949494;
 }
 
 .sidebar-secondary {
@@ -249,9 +272,39 @@ width: 25%;
   border: 0;
 }
 
+// Pagination
+
 .pagination {
   margin-top: 1em;
   float: right;
+}
+
+.previous {
+  background-color: #949494;
+  padding: .25em;
+  margin: 0 .2em 0 0;
+}
+
+.previous:hover,
+.previous:focus {
+  background-color: #597FA4;
+  color: #c9c9c9;
+}
+
+.page_number {
+
+}
+
+.next {
+  background-color: #949494;
+  padding: .25em;
+  margin: 0 .2em 0 0;
+}
+
+.next:hover,
+.next:focus {
+  background-color: #597FA4;
+  color: #c9c9c9;
 }
 
 
