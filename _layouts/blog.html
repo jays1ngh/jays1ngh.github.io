@@ -49,57 +49,38 @@ layout: default
 
     <!-- Pagination links -->
     <div class="pagination">
-      <!-- {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">
-        ❮
-      </a>
-      {% else %}
-      <span class="previous">❮</span>
-      {% endif %}
-      <span class="page_number ">
-        {{ paginator.page }} of {{ paginator.total_pages }}
-      </span>
-      {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">❯</a>
-      {% else %}
-      <span class="next ">❯</span>
-      {% endif %} -->
-
-      <!-- Test 2 -->
-      {% if paginator.total_pages > 1 %}
-      <div class="pagination">
-        <!-- displays first page -->
-        <a href="/blog">First</a>
-        <!-- displays previous page -->
-        {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">❮</a>
-        {% else %}
-        <span class="previous">❮</span>
-        {% endif %}
-
-        {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-        <!-- displays the page numbers -->
-        <span class=page-number>{{ page }}</span>
-        {% elsif page == 1 %}
-        <a href="/blog" class="page-number">{{ page }}</a>
-        {% else %}
-        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="page-number">
-          {{ page }}
-        </a>
-        {% endif %}
-        {% endfor %}
-        <!-- displays next page -->
-        {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="next">❯</a>
-        {% else %}
-        <span class="next">❯</span>
-        {% endif %}
-        <!-- prints last page -->
-        <a href="/blog/page/{{ paginator.total_pages }}/#/">Last</a>
-      </div>
-      {% endif %}
+                <!-- Pagination links -->
+                {% if paginator.total_pages > 1 %}
+                <ul class="pagination-ul">
+                  {% if paginator.previous_page %}
+                    <li class="pagination-li pagination-li-main"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">❮</a></li>
+                  {% else %}
+                    <li class="pagination-li pagination-li-main disabled"><span aria-hidden="true">❮</span></li>
+                  {% endif %}
+                  <!-- displays first page link -->
+                  <!-- <li class="pagination-li" ><a href="/blog">First</a></li> -->
+    
+                  {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                      <li class="pagination-li-active pagination-li pagination-li-main"><a>{{ page }}</a></li>
+                    {% elsif page == 1 %}
+                      <li class="pagination-li pagination-li-main"><a href="/blog">{{ page }}</a></li>
+                    {% else %}
+                      <li class="pagination-li pagination-li-main"><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  {% if paginator.next_page %}
+                    <li class="pagination-li pagination-li-main"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">❯</a></li>
+                  {% else %}
+                    <li class="disabled pagination-li pagination-li-main"><span>❯</span></li>
+                  {% endif %}
+                  <li class="pagination-li pagination-li-main"><a href="/blog/page/{{ paginator.total_pages }}/#/">Last</a></li>
+                </ul>
+              {% endif %}
+      
     </div> <!-- /pagination -->
+
+ 
   </div> <!-- /sidebar-main -->
 
   <div class="sidebar-secondary">
@@ -126,9 +107,5 @@ layout: default
     </div> <!-- /categories-all-widget -->
 
   </div> <!-- /sidebar-secondary -->
-
-  <!-- testing -->
-
-  <!-- Pagination links -->
 
 </div> <!-- /container -->
