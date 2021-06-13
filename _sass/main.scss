@@ -163,8 +163,12 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.post-card-outer {
   background-color: #ffffff;
   padding: .5em;
+  margin-bottom: 1em;
 }
 
 .post-title {
