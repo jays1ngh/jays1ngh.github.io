@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /blog/categories/
+---
+<div class="container container-categories">
+  <div class="sidebar-main">
+    <div class="categories-all">
+    {% for category in site.categories %}
+    <div class="category-each">
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <h2 class=""><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name }}</a></h2>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+        <article class="center">
+          <h6 ><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h6>
+        </article>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div><!-- /categories-all -->
+    
+  </div><!-- /sidebar-main -->
+
+  <div class="sidebar-secondary">
+    <div class="recent-posts-widget">
+      <!-- Recent Articles -->
+      <h2 class="recent-posts-blog">Recent Posts</h2>
+      {% for post in site.posts limit:5 %}
+      <p class="recent-posts-name-widget"><a href="{{ post.url }}">{{ post.title }}</a></p>
+      {% endfor %}
+    </div>
+
+    <div class="categories-all-widget">
+      <!-- Categories -->
+      <!-- This can be displayed as unordered list -->
+      <h2 class="categories-blog-widget-title">Categories</h2>
+      {% for category in site.categories %}
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <p class="category-name-widget"><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name
+          }}</a></p>
+      {% for post in site.categories[category_name] %}
+      {% endfor %}
+      {% endfor %}
+
+    </div> <!-- /categories-all-widget -->
+
+  </div> <!-- /sidebar-secondary -->
+</div><!-- /container -->

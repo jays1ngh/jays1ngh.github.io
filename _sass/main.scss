@@ -149,6 +149,7 @@ a {
 
 .sidebar-secondary a {
   color: #4d4d4d;
+  text-decoration: none;
 }
 
 .sidebar-secondary a:hover,
@@ -422,6 +423,28 @@ width: 25%;
 }
 
 /* ==================
+    Categories Layout
+===================== */
+.container-categories {
+  display: flex;
+  justify-content: center;
+}
+
+.categories-all {
+  
+}
+
+.category-each {
+  background-color: $backgrounf-color;
+  padding: 2em;
+  margin-right: 2em;
+}
+
+.category-each a {
+  color: $heading;
+}
+
+/* ==================
       Navigation
 ===================== */
 
@@ -561,6 +584,12 @@ nav a:focus {
   .author-info-brief {
     width: 100%;
   }
+
+  // Categories
+  .container-categories {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 391px) and (max-width: 899px) {
@@ -615,6 +644,12 @@ nav a:focus {
     
     .author-info-brief {
       width: 100%;
+    }
+
+    // Categories
+    .container-categories {
+      display: flex;
+      flex-direction: column;
     }
 
 }
