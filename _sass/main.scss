@@ -56,22 +56,6 @@ h2 {
   color: $heading;
 }
 
-h3 {
-
-}
-
-p {
-
-}
-
-strong {
-
-}
-
-a {
-
-}
-
 .site-title {
   color: #ececec;
 }
@@ -94,10 +78,6 @@ a {
 
 .blog-container h1 {
   color: #3579bb;
-}
-
-.blog-container h2 {
-
 }
 
 .blog-container a {
@@ -159,20 +139,9 @@ a {
 
 // Pagination
 
-.previous a {
-
-
-}
-
-.previous a:hover,
-.previous a:focus {
-
-}
 
 // This is applied on the Categories widget title
-.categories-all-widget h2 {
 
-}
 
 /* ===
   Post
@@ -330,9 +299,6 @@ width: 25%;
   text-decoration: none;
 }
 
-.pagination-li-active:active {
-}
-
 .pagination-li a {
   padding: .2em .5em;
   background-color: #c9c9c9;
@@ -355,10 +321,6 @@ width: 25%;
 .pagination-li span:hover {
   background-color: #949494;
   color: #c9c9c9;
-}
-
-.pagination-li-main {
-
 }
 
 .previous:hover,
@@ -428,10 +390,6 @@ width: 25%;
 .container-categories {
   display: flex;
   justify-content: center;
-}
-
-.categories-all {
-  
 }
 
 .category-each {
@@ -598,6 +556,7 @@ nav a:focus {
 
   .category-each {
     margin-right: 0;
+  }
 }
 
 @media (min-width: 391px) and (max-width: 899px) {
