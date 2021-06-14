@@ -410,10 +410,46 @@ nav a:focus {
 /* =====================
     Responsive Media Queries
     =====================*/
+@media (min-width:200px) and (max-width:390px) {
+      header {
+        padding: .5em;
+      }
 
-@media (min-width:375px) and (max-width:899px) {
+        .site-title {
+          justify-content: center;
+        }
+
+        .site-main-title {
+          font-size: 1em;
+          margin-top: .4em;
+        }
+
+        .site-subtitle {
+          margin: 0;
+        }
+        
+        nav li {
+          margin-left: 1em;
+        
+          /*Centres the navigation buttons
+          margin: 0 1em; */
+        }
+        
+        nav a {
+          text-decoration: none;
+          color: #fafafa;
+          font-weight: 400;
+          font-size: 1rem;
+          padding: .25em 0;
+        }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 899px) {
   // blog
-
   .sidebar-main {
     margin-bottom: 3.5em;
   }
@@ -440,7 +476,7 @@ nav a:focus {
 
 }
 
-@media (min-width:900px) {
+@media (min-width: 900px) {
   // blog
   .blog-container {
     display: flex;
@@ -455,5 +491,3 @@ nav a:focus {
     width: 25%;
     }
 }
-
-
