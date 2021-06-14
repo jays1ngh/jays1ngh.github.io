@@ -414,6 +414,7 @@ width: 25%;
 
 .post-author-image {
   border-radius: 50%;
+  display: block;
 }
 
 .author-info-brief {
@@ -572,6 +573,10 @@ nav a:focus {
     margin-bottom: 1em;
     }
 
+    .post-author {
+      text-align: center;
+    }
+
     .author-info-detailed {
       flex-direction: column;
       justify-content: center;
@@ -579,7 +584,11 @@ nav a:focus {
     
     .post-author-media {
       width: 100%;
-      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .post-author-image {
+      margin: 0 auto;
     }
     
     .author-info-brief {
