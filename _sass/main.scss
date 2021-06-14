@@ -539,6 +539,28 @@ nav a:focus {
   .sidebar-main {
     margin-bottom: 3.5em;
   }
+
+  .post-author {
+    text-align: center;
+  }
+
+  .author-info-detailed {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .post-author-media {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .post-author-image {
+    margin: 0 auto;
+  }
+  
+  .author-info-brief {
+    width: 100%;
+  }
 }
 
 @media (min-width: 391px) and (max-width: 899px) {
