@@ -6,7 +6,7 @@ $button: #3579bb;
 $button-hover: #fafafa;
 $button-reverse: #fafafa;
 $button-hover-reverse: #3579bb;
-$backgrounf-color: #ffffff;
+$background-color: #ffffff;
 
 
 
@@ -372,7 +372,7 @@ width: 25%;
 ===*/
 
 .post-data {
-  background-color: $backgrounf-color;
+  background-color: $background-color;
   padding: 1em;
 }
 .post-media {
@@ -394,14 +394,14 @@ width: 25%;
 
 .previous-next {
   display: flex;
-  background-color: $backgrounf-color;
+  background-color: $background-color;
   justify-content: space-between;
   margin-bottom: 1em;
   padding: 1em;
 }
 
 .post-author {
-  background-color: $backgrounf-color;
+  background-color: $background-color;
   padding: 1em;
 }
 
@@ -435,9 +435,14 @@ width: 25%;
 }
 
 .category-each {
-  background-color: $backgrounf-color;
+  background-color: $background-color;
   padding: 2em;
-  margin-right: 2em;
+  border-bottom: 1px solid #949494;
+  
+}
+
+.category-each:last-child {
+  border: 0;
 }
 
 .category-each a {
@@ -590,6 +595,9 @@ nav a:focus {
     display: flex;
     flex-direction: column;
   }
+
+  .category-each {
+    margin-right: 0;
 }
 
 @media (min-width: 391px) and (max-width: 899px) {
@@ -650,6 +658,14 @@ nav a:focus {
     .container-categories {
       display: flex;
       flex-direction: column;
+    }
+
+    .category-each {
+      background-color: $background-color;
+      padding: 2em;
+      margin: 0;
+      border-bottom: 1px solid #949494;
+      
     }
 
 }

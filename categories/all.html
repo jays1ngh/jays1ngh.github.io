@@ -8,12 +8,10 @@ permalink: /blog/categories/
     {% for category in site.categories %}
     <div class="category-each">
         {% capture category_name %}{{ category | first }}{% endcapture %}
-        <h2 class=""><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name }}</a></h2>
+        <h2 class="category-name"><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name }}</a></h2>
         <a name="{{ category_name | slugize }}"></a>
         {% for post in site.categories[category_name] %}
-        <article class="center">
-          <h6 ><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h6>
-        </article>
+          <h6 class="category-post-name" ><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h6>
         {% endfor %}
       </div>
     {% endfor %}
