@@ -1,3 +1,15 @@
+// Styling with scss
+
+/* variables */
+$heading: #3579bb;
+$button: #3579bb;
+$button-hover: #fafafa;
+$button-reverse: #fafafa;
+$button-hover-reverse: #3579bb;
+$backgrounf-color: #ffffff;
+
+
+
 /* ==================
       Global Styles
 ===================== */
@@ -30,7 +42,7 @@ h1 {
 }
 
 h2 {
-
+  color: $heading;
 }
 
 h3 {
@@ -150,6 +162,17 @@ a {
 
 }
 
+/* ===
+  Post
+  === */
+
+.previous-post a:hover,
+.previous-post a:focus,
+.next-post a:hover,
+.next-post a:focus {
+  color: #000;
+}
+
 /* ==================
       Layout
 ===================== */
@@ -176,11 +199,6 @@ header {
 /* ====
   Blog Page
   ========*/
-// .blog-container {
-//   display: flex;
-// .sidebar-main {
-//   max-width: 70%;
-// }
 
 .post-card {
   width: 100%;
@@ -203,11 +221,11 @@ header {
   display: flex;
 }
 
-.post-media {
+.blog-media {
 width: 25%;
 }
 
-.post-img {
+.blog-img {
   width: 100%;
   display: block;
 }
@@ -219,8 +237,8 @@ width: 25%;
   margin-left: 2em;
 }
 
-.post-meta {
-
+.post-meta-blog {
+  margin-bottom: 1em;
 }
 
 .post-content {
@@ -281,7 +299,7 @@ width: 25%;
   border: 0;
 }
 
-// Pagination
+// Pagination -blog
 
 .pagination {
   display: flex;
@@ -336,6 +354,45 @@ width: 25%;
   background-color: #597FA4;
   color: #c9c9c9;
 }
+
+/*====
+  Post-Layout
+===*/
+
+.post-data {
+  background-color: $backgrounf-color;
+  padding: 1em;
+}
+.post-media {
+  margin-bottom: 1em;
+  }
+
+.post-img {
+  width: 100%;
+  display: block;
+}
+
+.post-meta {
+  margin-bottom: 1em;
+}
+
+.post-detail {
+  
+}
+
+.previous-next {
+  display: flex;
+  background-color: $backgrounf-color;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post-author {
+  background-color: $backgrounf-color;
+  padding: 1em;
+}
+
 
 /* ==================
       Navigation
@@ -463,12 +520,12 @@ nav a:focus {
     flex-direction: column;
   }
   
-  .post-media {
+  .blog-media {
   width: 100%;
   margin-bottom: 1em;
   }
   
-  .post-img {
+  .blog-img {
     width: 100%;
     display: block;
   }
@@ -477,6 +534,12 @@ nav a:focus {
     width: 100%;
     margin: 0;
   }
+
+  // post
+  .post-media {
+    width: 100%;
+    margin-bottom: 1em;
+    }
 
 }
 

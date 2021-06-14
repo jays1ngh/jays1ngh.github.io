@@ -13,12 +13,12 @@ layout: default
         </div>
 
         <div class=post-card-inner>
-          <div class="post-media">
-            <img class="post-img" src="{{site.url}}{{site.baseurl}}{{ post.thumbnail }}" alt="{{ post.title }}">
+          <div class="blog-media">
+            <img class="blog-img" src="{{site.url}}{{site.baseurl}}{{ post.thumbnail }}" alt="{{ post.title }}">
           </div>
 
           <div class="post-content-all">
-            <div class="post-meta">
+            <div class="post-meta-blog">
               <span>{% assign author = site.authors | where: 'short_name', post.author | first %}
                 {% if author %}
                 <a href="{{ author.url }}">{{ author.name }}</a>

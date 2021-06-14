@@ -4,56 +4,58 @@ layout: default
 <div class="container blog-container">
 
   <div class="sidebar-main">
-    <div class="">
-      <img
-        class="post-img"
-        src="{{site.url}}{{site.baseurl}}{{ page.thumbnail }}"
-        alt="{{ post.title }}"
-      />
-    </div>
+    <div class="post-data">
+
+      <div class="post-media">
+        <img
+          class="post-img"
+          src="{{site.url}}{{site.baseurl}}{{ page.thumbnail }}"
+          alt="{{ post.title }}"
+        />
+        </div>
+      
+      <div class="post-title">
+        <h2>{{ page.title }}</h2>
+        </div>
     
-  <div class="post-title">
-    <h1>{{ page.title }}</h1>
+      <div class="post-meta">
 
-  <div class="post-meta">
+        <span>
+          {{ page.date | date_to_string }} </span>
+          <span>
+          {% assign author = site.authors | where: 'short_name', page.author | first %}
+          {% if author %}
+            <a href="{{ author.url }}">{{ author.name }}</a>
+          {% endif %}
+        </span>
+      
+        <!-- adds category field -->
+        <span>
+          {% if post %} {% assign categories = post.categories %} {% else %} {%
+          assign categories = page.categories %} {% endif %} Category : {% for
+          category in categories %}
+          <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}"
+            >{{category}}</a
+          >
+          {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+        </span>
+        </div><!-- /post-meta -->
 
-  <span>
-    {{ page.date | date_to_string }} </span>
-    <span>
-    {% assign author = site.authors | where: 'short_name', page.author | first %}
-    {% if author %}
-      <a href="{{ author.url }}">{{ author.name }}</a>
-    {% endif %}
-  </span>
+      <div class="post-detail">
+    {{ content }}
+        </div>
+  </div> <!-- post-data -->
 
-  <!-- adds category field -->
-  <span>
-    {% if post %} {% assign categories = post.categories %} {% else %} {%
-    assign categories = page.categories %} {% endif %} Category : {% for
-    category in categories %}
-    <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}"
-      >{{category}}</a
-    >
-    {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
-  </span>
-  </div><!-- /post-meta -->
-
-  </div>
-
-  <div class="post-detail">
-  {{ content }}
-    </div>
-
-  <div class="Previous-next">
+  <div class="previous-next">
     {% if page.previous.url %}
-      <a class="previous" href="{{page.previous.url}}">❮ Previous Post</a>
+      <a class="previous-post" href="{{page.previous.url}}">❮ Previous Post</a>
     {% endif %}
     {% if page.next.url %}
-      <a class="next" href="{{page.next.url}}">Next Post ❯</a>
+      <a class="next-post" href="{{page.next.url}}">Next Post ❯</a>
     {% endif %}
   </div>
 
-  <div>
+  <div class="post-author">
     {% assign author = site.authors | where: 'short_name', page.author | first %}
     {% if author %}
       <p>About <a href="{{ author.url }}">{{ author.name }}</a></p>
