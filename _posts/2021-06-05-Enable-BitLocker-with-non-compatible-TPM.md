@@ -120,7 +120,9 @@ C:\Users\Public\Documents\MDMDiagnostics
 
 4. Similar information as stated in Step 3 can also be gathered through registry keys. This information is stored in the following:
 
+```cmd
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker
+```
 
 5. Event Viewer will have registered events in Applications and Services log > Microsoft > Windows > BitLocker API
 

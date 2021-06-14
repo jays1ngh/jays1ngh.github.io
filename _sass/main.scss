@@ -19,6 +19,17 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   background-color: #f3f3f3;
+
+  // Syntax issue resolution
+  word-wrap: break-word; /* force long words to break */
+  overflow-wrap: break-word; /* newer syntax standard that replaces word-wrap */
+}
+
+// Sytax issue resolved
+code,
+pre,
+samp {
+  white-space: pre-wrap; /* force long lines to break */
 }
 
 footer {
@@ -463,6 +474,11 @@ nav a:focus {
 .post-category {
   margin-bottom: 2rem;
 }
+
+/* =====================
+    highlighter
+======================= */
+
 
 /* =====================
     Responsive Media Queries
