@@ -59,7 +59,17 @@ layout: default
     {% assign author = site.authors | where: 'short_name', page.author | first %}
     {% if author %}
       <p>About <a href="{{ author.url }}">{{ author.name }}</a></p>
-      <p>{{author.position}}</p>
+      <div class="author-info-detailed">
+
+        <div class="post-author-media">
+            <img src="{{author.author_img}}" class="post-author-image">
+          </div>
+
+        <div class="author-info-brief">
+          <p>{{author.position}}</p>
+          <p>{{author.author_website}}</p>
+          </div>
+    </div>
     {% endif %}
   </div>
 </div> <!-- /sidebar-main -->

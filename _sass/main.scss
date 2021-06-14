@@ -404,6 +404,21 @@ width: 25%;
   padding: 1em;
 }
 
+.author-info-detailed {
+  display: flex;
+}
+
+.post-author-media {
+  width: 30%;
+}
+
+.post-author-image {
+  border-radius: 50%;
+}
+
+.author-info-brief {
+  width: 60%;
+}
 
 /* ==================
       Navigation
