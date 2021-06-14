@@ -572,6 +572,20 @@ nav a:focus {
     margin-bottom: 1em;
     }
 
+    .author-info-detailed {
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .post-author-media {
+      width: 100%;
+      align-items: center;
+    }
+    
+    .author-info-brief {
+      width: 100%;
+    }
+
 }
 
 @media (min-width: 900px) {
