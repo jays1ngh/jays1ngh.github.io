@@ -309,7 +309,6 @@ width: 25%;
 .pagination-li a:focus {
   background-color: #597FA4 ;
   color: #e1e1e1;
-  
 }
 
 .pagination-li span {
@@ -351,7 +350,7 @@ width: 25%;
 }
 
 .post-detail {
-  
+
 }
 
 .previous-next {
@@ -365,6 +364,7 @@ width: 25%;
 .post-author {
   background-color: $background-color;
   padding: 1em;
+  margin-bottom: 2em;
 }
 
 .author-info-detailed {
@@ -397,7 +397,6 @@ width: 25%;
   padding: 2em;
   margin-right: 2em;
   border-bottom: 1px solid #949494;
-  
 }
 
 .category-each:last-child {
@@ -503,14 +502,11 @@ nav a:focus {
         .site-subtitle {
           margin: 0;
         }
-        
         nav li {
           margin-left: 1em;
-        
           /*Centres the navigation buttons
           margin: 0 1em; */
         }
-        
         nav a {
           text-decoration: none;
           color: #fafafa;
@@ -535,7 +531,6 @@ nav a:focus {
     flex-direction: column;
     justify-content: center;
   }
-  
   .post-author-media {
     width: 100%;
     margin-bottom: 1em;
@@ -544,7 +539,6 @@ nav a:focus {
   .post-author-image {
     margin: 0 auto;
   }
-  
   .author-info-brief {
     width: 100%;
   }
@@ -570,17 +564,14 @@ nav a:focus {
     display: flex;
     flex-direction: column;
   }
-  
   .blog-media {
   width: 100%;
   margin-bottom: 1em;
   }
-  
   .blog-img {
     width: 100%;
     display: block;
   }
-  
   .post-content-all {
     width: 100%;
     margin: 0;
@@ -600,7 +591,6 @@ nav a:focus {
       flex-direction: column;
       justify-content: center;
     }
-    
     .post-author-media {
       width: 100%;
       margin-bottom: 1em;
@@ -609,7 +599,6 @@ nav a:focus {
     .post-author-image {
       margin: 0 auto;
     }
-    
     .author-info-brief {
       width: 100%;
     }
@@ -625,7 +614,6 @@ nav a:focus {
       padding: 2em;
       margin: 0;
       border-bottom: 1px solid #949494;
-      
     }
 
 }
