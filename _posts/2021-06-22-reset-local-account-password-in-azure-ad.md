@@ -7,7 +7,7 @@ thumbnail:
 ---
 When I try to reset password for a local user in Azure AD then I see the below error:
 
->## We could not change your password
+>### We could not change your password
 >
 >We're sorry, but we cannot change your password at this time. Unfortunately, this is due to an unrecoverable issue with your account configuration, so trying again won't work.
 >
