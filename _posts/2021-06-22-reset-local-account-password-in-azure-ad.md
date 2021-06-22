@@ -13,4 +13,4 @@ When I try to reset password for a local user in Azure AD then I see the below e
 >
 >Please contact your admin to change your password for you.
 
-I started researching the issue and took a measured aproach to narrow down the root cause. Then I looked at this document from Microsoft https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr-writeback. Obviusly, I did not follow this as I originally though checking the box while setting up Azure AD Connect will do the rest for me.
+I started researching the issue and took a measured aproach to narrow down the root cause. Then I looked at this [document from Microsoft](https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr-writeback). Obviusly, I did not follow this as I originally though checking the box while setting up Azure AD Connect will do the rest for me.
