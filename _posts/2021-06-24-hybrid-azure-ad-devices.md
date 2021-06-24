@@ -10,3 +10,6 @@ Configuring hybrid azure ad for managed domains would be a straighforward proced
 
 >This blog is still in development...
 
+## Prerequisites
+- Azure AD Connect configured
+- Seamless SSO configured
