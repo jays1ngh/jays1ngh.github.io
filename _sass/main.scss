@@ -1,3 +1,15 @@
+// Styling with scss
+
+/* variables */
+$heading: #3579bb;
+$button: #3579bb;
+$button-hover: #fafafa;
+$button-reverse: #fafafa;
+$button-hover-reverse: #3579bb;
+$background-color: #ffffff;
+
+
+
 /* ==================
       Global Styles
 ===================== */
@@ -7,6 +19,17 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   background-color: #f3f3f3;
+
+  // Syntax issue resolution
+  word-wrap: break-word; /* force long words to break */
+  overflow-wrap: break-word; /* newer syntax standard that replaces word-wrap */
+}
+
+// Sytax issue resolved
+code,
+pre,
+samp {
+  white-space: pre-wrap; /* force long lines to break */
 }
 
 footer {
@@ -30,23 +53,33 @@ h1 {
 }
 
 h2 {
-
+  color: $heading;
 }
 
-h3 {
-
+blockquote {
+  background: #3578bb21;
+  border-left: 10px solid #3579bb;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px;
 }
 
-p {
-
+blockquote:before {
+  color: #3579bb;
+  // content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
 }
 
-strong {
-
+blockquote p {
+  display: inline;
 }
 
-a {
-
+blockquote h3 {
+  color: #4d4d4d;
+  font-size: 1.2rem;
 }
 
 .site-title {
@@ -71,10 +104,6 @@ a {
 
 .blog-container h1 {
   color: #3579bb;
-}
-
-.blog-container h2 {
-
 }
 
 .blog-container a {
@@ -126,6 +155,7 @@ a {
 
 .sidebar-secondary a {
   color: #4d4d4d;
+  text-decoration: none;
 }
 
 .sidebar-secondary a:hover,
@@ -135,19 +165,19 @@ a {
 
 // Pagination
 
-.previous a {
-
-
-}
-
-.previous a:hover,
-.previous a:focus {
-
-}
 
 // This is applied on the Categories widget title
-.categories-all-widget h2 {
 
+
+/* ===
+  Post
+  === */
+
+.previous-post a:hover,
+.previous-post a:focus,
+.next-post a:hover,
+.next-post a:focus {
+  color: #000;
 }
 
 /* ==================
@@ -176,14 +206,6 @@ header {
 /* ====
   Blog Page
   ========*/
-.blog-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sidebar-main {
-  max-width: 70%;
-}
 
 .post-card {
   width: 100%;
@@ -206,11 +228,11 @@ header {
   display: flex;
 }
 
-.post-media {
+.blog-media {
 width: 25%;
 }
 
-.post-img {
+.blog-img {
   width: 100%;
   display: block;
 }
@@ -222,8 +244,8 @@ width: 25%;
   margin-left: 2em;
 }
 
-.post-meta {
-
+.post-meta-blog {
+  margin-bottom: 1em;
 }
 
 .post-content {
@@ -244,12 +266,12 @@ width: 25%;
   background-color: #949494;
 }
 
-.sidebar-secondary {
-  width: 25%;
-}
+// .sidebar-secondary {
+//   width: 25%;
+// }
 
 .recent-posts-widget {
-  padding: .5em;
+  padding: 1em;
   background-color: white;
 }
 
@@ -267,7 +289,7 @@ width: 25%;
 }
 
 .categories-all-widget {
-  padding: .5em;
+  padding: 1em;
   background-color: white;
   margin-top: 2em;
 }
@@ -284,7 +306,7 @@ width: 25%;
   border: 0;
 }
 
-// Pagination
+// Pagination -blog
 
 .pagination {
   display: flex;
@@ -303,9 +325,6 @@ width: 25%;
   text-decoration: none;
 }
 
-.pagination-li-active:active {
-}
-
 .pagination-li a {
   padding: .2em .5em;
   background-color: #c9c9c9;
@@ -316,7 +335,6 @@ width: 25%;
 .pagination-li a:focus {
   background-color: #597FA4 ;
   color: #e1e1e1;
-  
 }
 
 .pagination-li span {
@@ -330,14 +348,89 @@ width: 25%;
   color: #c9c9c9;
 }
 
-.pagination-li-main {
-
-}
-
 .previous:hover,
 .previous:focus {
   background-color: #597FA4;
   color: #c9c9c9;
+}
+
+/*====
+  Post-Layout
+===*/
+
+.post-data {
+  background-color: $background-color;
+  padding: 1em;
+}
+.post-media {
+  margin-bottom: 1em;
+  }
+
+.post-img {
+  width: 100%;
+  display: block;
+}
+
+.post-meta {
+  margin-bottom: 1em;
+}
+
+.post-detail {
+
+}
+
+.previous-next {
+  display: flex;
+  background-color: $background-color;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post-author {
+  background-color: $background-color;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.author-info-detailed {
+  display: flex;
+}
+
+.post-author-media {
+  width: 30%;
+}
+
+.post-author-image {
+  border-radius: 50%;
+  display: block;
+}
+
+.author-info-brief {
+  width: 60%;
+}
+
+/* ==================
+    Categories Layout
+===================== */
+.container-categories {
+  display: flex;
+  justify-content: center;
+}
+
+.category-each {
+  background-color: $background-color;
+  padding: 2em;
+  margin-right: 2em;
+  border-bottom: 1px solid #949494;
+}
+
+.category-each:last-child {
+  border: 0;
+}
+
+.category-each a {
+  color: $heading;
 }
 
 /* ==================
@@ -408,4 +501,168 @@ nav a:focus {
 
 .post-category {
   margin-bottom: 2rem;
+}
+
+.post-detail img {
+  width: 100%;
+  display: block;
+  max-width: 783px;
+  height: auto;
+}
+
+/* =====================
+    highlighter
+======================= */
+
+
+/* =====================
+    Responsive Media Queries
+    =====================*/
+@media (min-width:200px) and (max-width:390px) {
+      header {
+        padding: .5em;
+      }
+
+        .site-title {
+          justify-content: center;
+        }
+
+        .site-main-title {
+          font-size: 1em;
+          margin-top: .4em;
+        }
+
+        .site-subtitle {
+          margin: 0;
+        }
+        nav li {
+          margin-left: 1em;
+          /*Centres the navigation buttons
+          margin: 0 1em; */
+        }
+        nav a {
+          text-decoration: none;
+          color: #fafafa;
+          font-weight: 400;
+          font-size: 1rem;
+          padding: .25em 0;
+        }
+
+  .container {
+    width: 100%;
+  }
+
+  .sidebar-main {
+    margin-bottom: 3.5em;
+  }
+
+  .post-author {
+    text-align: center;
+  }
+
+  .author-info-detailed {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .post-author-media {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .post-author-image {
+    margin: 0 auto;
+  }
+  .author-info-brief {
+    width: 100%;
+  }
+
+  // Categories
+  .container-categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-each {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 899px) {
+  // blog
+  .sidebar-main {
+    margin-bottom: 3.5em;
+  }
+
+  .post-card-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-media {
+  width: 100%;
+  margin-bottom: 1em;
+  }
+  .blog-img {
+    width: 100%;
+    display: block;
+  }
+  .post-content-all {
+    width: 100%;
+    margin: 0;
+  }
+
+  // post
+  .post-media {
+    width: 100%;
+    margin-bottom: 1em;
+    }
+
+    .post-author {
+      text-align: center;
+    }
+
+    .author-info-detailed {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .post-author-media {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .post-author-image {
+      margin: 0 auto;
+    }
+    .author-info-brief {
+      width: 100%;
+    }
+
+    // Categories
+    .container-categories {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-each {
+      background-color: $background-color;
+      padding: 2em;
+      margin: 0;
+      border-bottom: 1px solid #949494;
+    }
+
+}
+
+@media (min-width: 900px) {
+  // blog
+  .blog-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sidebar-main {
+    max-width: 70%;
+  }
+
+  .sidebar-secondary {
+    width: 25%;
+    }
 }

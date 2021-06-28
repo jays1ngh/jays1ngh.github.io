@@ -1,34 +1,123 @@
 ---
 layout: default
+comments: true
 ---
-<div class="container">
-  <div class="post-title">
-    <h1>{{ page.title }}</h1>
+<div class="container blog-container">
 
-  <p>
-    {{ page.date | date_to_string }}
+  <div class="sidebar-main">
+    <div class="post-data">
+
+      <div class="post-media">
+        <img
+          class="post-img"
+          src="{{site.url}}{{site.baseurl}}{{ page.thumbnail }}"
+          alt="{{ post.title }}"
+        />
+        </div>
+      <div class="post-title">
+        <h2>{{ page.title }}</h2>
+        </div>
+      <div class="post-meta">
+
+        <span>
+          {{ page.date | date_to_string }} </span>
+          <span>
+          {% assign author = site.authors | where: 'short_name', page.author | first %}
+          {% if author %}
+            <a href="{{ author.url }}">{{ author.name }}</a>
+          {% endif %}
+        </span>
+        <!-- adds category field -->
+        <span>
+          {% if post %} {% assign categories = post.categories %} {% else %} {%
+          assign categories = page.categories %} {% endif %} Category : {% for
+          category in categories %}
+          <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}"
+            >{{category}}</a
+          >
+          {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+        </span>
+        </div><!-- /post-meta -->
+
+      <div class="post-detail">
+    {{ content }}
+        </div>
+  </div> <!-- post-data -->
+
+  <div class="previous-next">
+    {% if page.previous.url %}
+      <a class="previous-post" href="{{page.previous.url}}">❮ Previous Post</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next-post" href="{{page.next.url}}">Next Post ❯</a>
+    {% endif %}
+  </div>
+
+  <div class="post-author">
     {% assign author = site.authors | where: 'short_name', page.author | first %}
     {% if author %}
-      - <a href="{{ author.url }}">{{ author.name }}</a>
-    {% endif %}
-  </p>
+      <p>About <a href="{{ author.url }}">{{ author.name }}</a></p>
+      <div class="author-info-detailed">
 
-  <!-- adds category field -->
-  <div class="post-category">
-    {% if post %} {% assign categories = post.categories %} {% else %} {%
-    assign categories = page.categories %} {% endif %} Category : {% for
-    category in categories %}
-    <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}"
-      >{{category}}</a
-    >
-    {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
-  </div>
+        <div class="post-author-media">
+            <img src="{{author.author_img}}" class="post-author-image">
+          </div>
 
-  </div>
-
-  <img class="post-img" src="{{site.url}}{{site.baseurl}}{{ post.thumbnail }}">
-
-  <div class="post-detail">
-  {{ content }}
+        <div class="author-info-brief">
+          <p>{{author.position}}</p>
+          <p>{{author.author_website}}</p>
+          </div>
     </div>
+    {% endif %}
+  </div>
+
+  <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://github-masteringmdm-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+
+</div> <!-- /sidebar-main -->
+
+<div class="sidebar-secondary">
+  <div class="recent-posts-widget">
+    <!-- Recent Articles -->
+    <h2 class="recent-posts-blog">Recent Posts</h2>
+    {% for post in site.posts limit:5 %}
+    <p class="recent-posts-name-widget"><a href="{{ post.url }}">{{ post.title }}</a></p>
+    {% endfor %}
+  </div>
+
+  <div class="categories-all-widget">
+    <!-- Categories -->
+    <!-- This can be displayed as unordered list -->
+    <h2 class="categories-blog-widget-title">Categories</h2>
+    {% for category in site.categories %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <p class="category-name-widget"><a href="{{ site.baseurl }}/blog/categories/{{ category_name }}">{{ category_name
+        }}</a></p>
+    {% for post in site.categories[category_name] %}
+    {% endfor %}
+    {% endfor %}
+
+  </div> <!-- /categories-all-widget -->
+
+</div> <!-- /sidebar-secondary -->
+
+
 </div>
+
