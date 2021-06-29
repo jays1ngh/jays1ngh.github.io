@@ -32,6 +32,23 @@ samp {
   white-space: pre-wrap; /* force long lines to break */
 }
 
+// Anchor links
+.anchor-heading .anchor-link {
+  display: inline-block;
+  padding-left: .25rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity ease-in-out .25s;
+}
+
+.anchor-heading .anchor-link:hover {
+  opacity: 1 !important;
+}
+
+.anchor-heading:hover .anchor-link {
+  opacity: .5;
+}
+
 footer {
   text-align: center;
   background-color: #444444;
