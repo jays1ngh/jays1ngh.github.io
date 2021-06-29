@@ -27,7 +27,7 @@ Table of Contents
 This cannot be automated if you would like to rely on configuration profiles
 Additional authentication at startup is required
 
-Solution
+### Solution
 Log in the Microsoft Endpoint Manager admin center.
 1. Go to Home > Devices > Windows > Configuration Profiles > Create Profile
 
@@ -55,7 +55,7 @@ Additional authentication at startup: Require
 
 
 
-Monitoring Part 1
+### Monitoring Part 1
 You can check the deployment/compliance status of this profile through the Monitor settings. These settings are available under Monitor node as shown below.
 
 
@@ -99,7 +99,7 @@ You will see the progress, something similar as shown below and it is done.
 
 
 
-Monitoring Part 2
+### Monitoring Part 2
 There are a few ways to monitor and investigate this. Either you can check Endpoint Manager Admin center or client to see whether this has deployed properly or not.
 
 Endpoint Manager Admin Center
@@ -127,5 +127,5 @@ Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitL
 5. Event Viewer will have registered events in Applications and Services log > Microsoft > Windows > BitLocker API
 
 
-Feedback
+### Feedback
 Your feedback is important and leave your thoughts in the comments below.
