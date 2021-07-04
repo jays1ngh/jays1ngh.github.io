@@ -1,32 +1,42 @@
-$(document).ready(function () {
-    $('.post-detail h1, .post-detail h2, .post-detail h3, .post-detail h4').each(function () {
+//  select all h2 tags in class post-detail
+var headings = document.querySelectorAll(".post-detail h2");
 
-        //create id from heading text
-        var id = $(this).attr('id') || $(this).text().toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/ +/g, '-');
+headings.forEach (function(heading) {
 
-        //add id to heading
-        $(this).attr('id', id);
+    // ************************
+    // Create Table of contents
+    // ************************
 
-        //append parent class to heading
-        $(this).addClass('anchor-heading');
+    // select element with ID toc
+    const toc = document.getElementById("toc");
+    // select the ID attribute of heading
+    const headingsAtrb = heading.attributes.id.textContent;
+    // create heading link with # 
+    const headingLink= "#" + headingsAtrb;
+    // select the header
+    const tocHeading = heading.innerHTML;
+    // create toc list
+    const tocListItem = document.createElement("li");
+    // create new "a" element
+    const tocEntry = document.createElement("a");
 
-        //create anchor
-        var anchor = $('<a class="anchor-link" href="#' + id + '">#</a>');
+    // set attributes of "a" element
+    tocEntry.setAttribute("href",headingLink);
+    tocEntry.innerText = tocHeading;
 
-        //append anchor link after heading text
-        $(this).append(anchor);
-    });
+    // append tocListItem
+    tocListItem.appendChild(tocEntry);
 
-    //add smooth scroll for anchor links
-    $(document).on('click', 'a.anchor-link', function (e) {
-        e.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top - 50
-        }, 10, 'linear');
-    });
+    // append toc div with the required information
+    toc.appendChild(tocListItem);
 
-    //navigate to anchor if available
-    if (window.location.hash.length > 0) {
-        $('a[href="' + window.location.hash + '"]').trigger('click');
-    }
+    // **************************
+    // Create anchors for h2 tags
+    // **************************
+
+    anchor = document.createElement("a");
+    anchor.className = 'anchor-link';
+    anchor.href = headingLink;
+    anchor.innerText = "#";
+    heading.appendChild(anchor);
 });
