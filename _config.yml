@@ -30,6 +30,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      thumbnail: /assets/img/posts/thumbnail.png
   - scope:
       path: ""
     values:
