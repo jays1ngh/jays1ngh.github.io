@@ -492,11 +492,11 @@ width: 25%;
       Navigation
 ===================== */
 
-nav {
+navbar {
 
 }
 
-nav ul {
+.navbar-links {
   list-style: none;
   display: flex;
   padding: 0;
@@ -530,6 +530,25 @@ nav a:focus {
 .site-main-title a:hover,
 .site-main-title a:focus {
   color: #c9c9c9;
+}
+
+// toggle
+.toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
 }
 
 /* ===============
@@ -574,34 +593,56 @@ nav a:focus {
     Responsive Media Queries
     =====================*/
 @media (min-width:200px) and (max-width:390px) {
-      header {
-        padding: .5em;
-      }
 
-        .site-title {
-          justify-content: center;
-        }
+  // naigation
+  header {
+    padding: .5em;
+  }
 
-        .site-main-title {
-          font-size: 1em;
-          margin-top: .4em;
-        }
+  .site-title {
+    justify-content: center;
+  }
 
-        .site-subtitle {
-          margin: 0;
-        }
-        nav li {
-          margin-left: 1em;
-          /*Centres the navigation buttons
-          margin: 0 1em; */
-        }
-        nav a {
-          text-decoration: none;
-          color: #fafafa;
-          font-weight: 400;
-          font-size: 1rem;
-          padding: .25em 0;
-        }
+  .site-main-title {
+    font-size: 1em;
+    margin-top: .4em;
+  }
+
+  .site-subtitle {
+    margin: 0;
+  }
+
+  nav li {
+    margin-left: 1em;
+    /*Centres the navigation buttons
+    margin: 0 1em; */
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: .75em;
+  }
+
+  // Nav toggle button
+  .toggle-button {
+    display: flex;
+  }
+
+  .container-nav {
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
 
   .container {
     width: 100%;
