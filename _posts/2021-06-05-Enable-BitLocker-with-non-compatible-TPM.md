@@ -4,6 +4,7 @@ author: jays1ngh
 categories: jekyll
 date: 2021-06-11
 thumbnail: /assets/img/posts/bitlocker.png
+image: /assets/img/posts/bitlocker.png
 ---
 
 Would you like to enable BitLocker on devices with non-compatible TPM or in simple words “devices without TPM” to secure the enterprise data.

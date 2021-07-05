@@ -4,6 +4,7 @@ author: jays1ngh
 categories: jekyll
 date: 2021-06-06
 thumbnail: /assets/img/posts/lorem-ipsum-1.png
+image: /assets/img/posts/lorem-ipsum-1.png
 ---
 
 Where does it come from?

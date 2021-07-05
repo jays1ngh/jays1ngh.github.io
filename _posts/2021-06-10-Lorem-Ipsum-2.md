@@ -4,6 +4,7 @@ author: jays1ngh
 categories: jekyll
 date: 2021-05-23
 thumbnail: /assets/img/posts/lorem-ipsum-2.png
+image: /assets/img/posts/lorem-ipsum-2.png
 ---
 
 Why do we use Lorem Ipsum?

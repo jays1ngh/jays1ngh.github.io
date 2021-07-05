@@ -7,6 +7,7 @@ categories: jekyll blog
 date: 2021-05-09
 thumbnail: /assets/img/posts/how-to-add-post-excerpts.png
 permalink: /blog/how-to-use-post-excerpt
+image: /assets/img/posts/how-to-add-post-excerpts.png
 # excerpt_separator: <!--more-->
 ---
 
