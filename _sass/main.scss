@@ -3,29 +3,26 @@
 /* variables */
 $body-background: #f3f3f3;
 $primary: #3579bb;
+$secondary: #444444;
 $heading: #3579bb;
 $button: #3579bb;
-$button-hover: #fafafa;
-$button-reverse: #fafafa;
+$button-hover: #949494;
+$button-reverse: #c9c9c9;
 $button-hover-reverse: #3579bb;
 $background-color: #ffffff;
 $footer-background: #444444;
-
-/*
-$primary: #3579bb;
-$secondary:
-$primary-font: #00000;
-$light-font: #ececec;
+$font-light: #ececec;
+$font-dark: #2b2d2f;
+$font-primary: #3579bb;
+$box-background: #ffffff;
+$box-background-other: #f3f3f3;
+$box-background-blue: #3578bb21;
 $link-color: #3579bb;
-$link-color-visited: #grey;
-$background-body: #f3f3f3;
-$background-box: #ececec;
-$button-color: #3579bb;
-$button-hover: #c9c9c9;
-
-*/
-
-
+$link-hover: #4d4d4d;
+$link-visited: #949494;
+$link-reverse: #4d4d4d;
+$link-hover-reverse: #e1e1e1;
+$border: #d3d3d3;
 
 /* ==================
       Global Styles
@@ -71,7 +68,7 @@ footer {
   text-align: center;
   background-color: $footer-background;
   padding: 3em;
-  color: #e1e1e1;
+  color: $font-light;
   margin-top: 2rem;
 }
 
@@ -88,11 +85,11 @@ h1 {
 }
 
 h2 {
-  color: $heading;
+  color: $font-primary
 }
 
 blockquote {
-  background: #3578bb21;
+  background: $box-background-blue;
   border-left: 10px solid $primary;
   margin-left: 0;
   margin-right: 0;
@@ -113,12 +110,12 @@ blockquote p {
 }
 
 blockquote h3 {
-  color: #4d4d4d;
+  color: $font-dark;
   font-size: 1.2rem;
 }
 
 .site-title {
-  color: #ececec;
+  color: $font-light;
 }
 
 .site-main-title {
@@ -140,17 +137,17 @@ blockquote h3 {
 // Blog
 
 .blog-container h1 {
-  color: $primary;
+  color: $font-primary;
 }
 
 .blog-container a {
-  color: $primary;
+  color: $font-primary;
   text-decoration: none;
 }
 
 .blog-container a:hover,
 .blog-container a:focus {
-  color: #4d4d4d;
+  color: $link-hover;
 }
 
 // sidebar-main
@@ -168,7 +165,7 @@ blockquote h3 {
 }
 
 .post-read-more a {
-  color: #fafafa;
+  color: $font-light;
   font-weight: 400;
   font-size: 1rem;
   margin: 0;
@@ -177,7 +174,7 @@ blockquote h3 {
 
 .post-read-more a:hover,
 .post-read-more a:focus {
-  color: #e1e1e1;
+  color: $font-light;
 }
 
 // sidebar-secondary
@@ -198,13 +195,13 @@ blockquote h3 {
 }
 
 .sidebar-secondary a {
-  color: #4d4d4d;
+  color: $font-dark;
   text-decoration: none;
 }
 
 .sidebar-secondary a:hover,
 .sidebar-secondary a:focus {
-  color: $primary;
+  color: $font-primary;
 }
 
 // Pagination
@@ -221,7 +218,7 @@ blockquote h3 {
 .previous-post a:focus,
 .next-post a:hover,
 .next-post a:focus {
-  color: #000;
+  color: $font-dark;
 }
 
 /* ==================
@@ -258,7 +255,7 @@ header {
 }
 
 .post-card-outer {
-  background-color: #ffffff;
+  background-color: $box-background;
   padding: .5em 1em 1em 1em;
   margin-bottom: 2em;
 }
@@ -275,7 +272,7 @@ header {
 }
 
 .post-title {
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid $border;
   margin-bottom: 1em;
 }
 
@@ -318,7 +315,7 @@ width: 25%;
 
 .post-read-more:hover,
 .post-read-more:focus {
-  background-color: #949494;
+  background-color: $button-hover;
 }
 
 // .sidebar-secondary {
@@ -327,15 +324,15 @@ width: 25%;
 
 .recent-posts-widget {
   padding: 1em;
-  background-color: white;
+  background-color: $box-background;
 }
 
 .recent-posts-blog {
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid $border;
 }
 
 .recent-posts-name-widget {
-  border-bottom: .5px solid #d3d3d3;
+  border-bottom: .5px solid $border;
 }
 
 .recent-posts-name-widget:last-child {
@@ -345,16 +342,16 @@ width: 25%;
 
 .categories-all-widget {
   padding: 1em;
-  background-color: white;
+  background-color: $box-background;
   margin-top: 2em;
 }
 
 .categories-blog-widget-title {
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid $border;
 }
 
 .category-name-widget {
-  border-bottom: .5px solid #d3d3d3;
+  border-bottom: .5px solid $border;
 }
 
 .category-name-widget:last-child {
@@ -376,37 +373,28 @@ width: 25%;
 
 .pagination-li {
   margin: .25rem;
-  color: #fafafa;
   text-decoration: none;
 }
 
-.pagination-li a {
+.pagination-li a,
+.pagination-li span {
   padding: .2em .5em;
-  background-color: #c9c9c9;
-  color: #444444;
+  background-color: $button-reverse;
+  color: $link-reverse;
 }
 
 .pagination-li a:hover,
-.pagination-li a:focus {
-  background-color: $primary ;
-  color: #e1e1e1;
-}
-
-.pagination-li span {
-  padding: .2em .5em;
-  background-color: #c9c9c9;
-  color: #444444;
-}
-
-.pagination-li span:hover {
-  background-color: #949494;
-  color: #c9c9c9;
+.pagination-li a:focus,
+.pagination-li span:hover,
+.pagination-li span.focus {
+  background-color: $button-hover-reverse;
+  color: $link-hover-reverse;
 }
 
 .previous:hover,
 .previous:focus {
-  background-color: $primary;
-  color: #c9c9c9;
+  background-color: $button;
+  color: $button-hover;
 }
 
 /*====
@@ -414,7 +402,7 @@ width: 25%;
 ===*/
 
 .post-data {
-  background-color: $background-color;
+  background-color: $box-background;
   padding: 1em;
 }
 .post-media {
@@ -436,14 +424,14 @@ width: 25%;
 
 .previous-next {
   display: flex;
-  background-color: $background-color;
+  background-color: $box-background;
   justify-content: space-between;
   margin-bottom: 1em;
   padding: 1em;
 }
 
 .post-author {
-  background-color: $background-color;
+  background-color: $box-background;
   padding: 1em;
   margin-bottom: 2em;
 }
@@ -468,7 +456,7 @@ width: 25%;
 // Table of contents
 #toc {
   width: max-content;
-  background: #f3f3f3;
+  background: $box-background-other;
   padding: 2rem;
   margin-bottom: 1rem;
 }
@@ -503,10 +491,10 @@ width: 25%;
 }
 
 .category-each {
-  background-color: $background-color;
+  background-color: $box-background;
   padding: 2em;
   margin-right: 2em;
-  border-bottom: 1px solid #949494;
+  border-bottom: 1px solid $border;
 }
 
 .category-each:last-child {
@@ -541,24 +529,24 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #fafafa;
+  color: $font-light;
   font-weight: 400;
   padding: .25em 0;
 }
 
 nav a:hover,
 nav a:focus {
-  color: #c9c9c9;
+  color: $font-dark;
 }
 
 .site-main-title a {
-  color: #ececec;
+  color: $font-light;
   text-decoration: none;
 }
 
 .site-main-title a:hover,
 .site-main-title a:focus {
-  color: #c9c9c9;
+  color: $font-dark;
 }
 
 // toggle
@@ -591,7 +579,7 @@ nav a:focus {
 
 .home-title-sub {
   text-align: center;
-  color: #444444;
+  color: $font-light;
 }
 
 .home-content {
@@ -649,7 +637,7 @@ nav a:focus {
 
   nav a {
     text-decoration: none;
-    color: #fafafa;
+    color: $font-light;
     font-weight: 400;
     font-size: 1rem;
     padding: .75em;
@@ -768,10 +756,10 @@ nav a:focus {
     }
 
     .category-each {
-      background-color: $background-color;
+      background-color: $box-background;
       padding: 2em;
       margin: 0;
-      border-bottom: 1px solid #949494;
+      border-bottom: 1px solid $border;
     }
 
 }
