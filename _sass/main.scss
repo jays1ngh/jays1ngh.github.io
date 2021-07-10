@@ -1,12 +1,29 @@
 // Styling with scss
 
 /* variables */
+$body-background: #f3f3f3;
+$primary: #3579bb;
 $heading: #3579bb;
 $button: #3579bb;
 $button-hover: #fafafa;
 $button-reverse: #fafafa;
 $button-hover-reverse: #3579bb;
 $background-color: #ffffff;
+$footer-background: #444444;
+
+/*
+$primary: #3579bb;
+$secondary:
+$primary-font: #00000;
+$light-font: #ececec;
+$link-color: #3579bb;
+$link-color-visited: #grey;
+$background-body: #f3f3f3;
+$background-box: #ececec;
+$button-color: #3579bb;
+$button-hover: #c9c9c9;
+
+*/
 
 
 
@@ -19,7 +36,7 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.6;
-  background-color: #f3f3f3;
+  background-color: $body-background;
 
   // Syntax issue resolution
   word-wrap: break-word; /* force long words to break */
@@ -52,7 +69,7 @@ samp {
 
 footer {
   text-align: center;
-  background-color: #444444;
+  background-color: $footer-background;
   padding: 3em;
   color: #e1e1e1;
   margin-top: 2rem;
@@ -76,14 +93,14 @@ h2 {
 
 blockquote {
   background: #3578bb21;
-  border-left: 10px solid #3579bb;
+  border-left: 10px solid $primary;
   margin-left: 0;
   margin-right: 0;
   padding: 20px;
 }
 
 blockquote:before {
-  color: #3579bb;
+  color: $primary;
   // content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -123,11 +140,11 @@ blockquote h3 {
 // Blog
 
 .blog-container h1 {
-  color: #3579bb;
+  color: $primary;
 }
 
 .blog-container a {
-  color: #3579bb;
+  color: $primary;
   text-decoration: none;
 }
 
@@ -155,6 +172,7 @@ blockquote h3 {
   font-weight: 400;
   font-size: 1rem;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .post-read-more a:hover,
@@ -174,7 +192,7 @@ blockquote h3 {
 .sidebar-secondary h2 {
   font-weight: 700;
   font-size: 1em;
-  color: #3579bb;
+  color: $primary;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
@@ -186,7 +204,7 @@ blockquote h3 {
 
 .sidebar-secondary a:hover,
 .sidebar-secondary a:focus {
-  color: #3579bb;
+  color: $primary;
 }
 
 // Pagination
@@ -224,7 +242,7 @@ blockquote h3 {
 
 header {
   text-align: center;
-  background-color: #597FA4;
+  background-color: $primary;
   padding: 0;
   margin-bottom: 2em;
 }
@@ -243,6 +261,17 @@ header {
   background-color: #ffffff;
   padding: .5em 1em 1em 1em;
   margin-bottom: 2em;
+}
+
+.post-card-outer,
+.post-read-more,
+.blog-img,
+.pagination-li a,
+.pagination-li span,
+.recent-posts-widget,
+.categories-all-widget {
+  border-radius: 2px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-title {
@@ -283,8 +312,8 @@ width: 25%;
 
 .post-read-more {
   float: right;
-  padding:0 .25em .1em .25em;
-  background-color: #597FA4;
+  padding:0 .5rem;
+  background-color: $primary;
 }
 
 .post-read-more:hover,
@@ -359,7 +388,7 @@ width: 25%;
 
 .pagination-li a:hover,
 .pagination-li a:focus {
-  background-color: #597FA4 ;
+  background-color: $primary ;
   color: #e1e1e1;
 }
 
@@ -376,7 +405,7 @@ width: 25%;
 
 .previous:hover,
 .previous:focus {
-  background-color: #597FA4;
+  background-color: $primary;
   color: #c9c9c9;
 }
 
