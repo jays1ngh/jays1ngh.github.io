@@ -3,7 +3,7 @@
 /* variables */
 :root {
   --body-background: #f3f3f3;
-  --primary: #3579bb;
+  --primary: rgba(53, 121, 187);
   --secondary: #444444;
   --heading: #3579bb;
   --button: #3579bb;
@@ -28,7 +28,7 @@
 
 .theme-light {
 --body-background: #f3f3f3;
---primary: #3579bb;
+--primary: rgba(53, 121, 187);
 --secondary: #444444;
 --heading: #3579bb;
 --button: #3579bb;
@@ -917,6 +917,11 @@ nav a:focus {
 @media (min-width: 481px) and (max-width: 899px) {
   header {
     padding: .5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color:rgba(53, 121, 187, 0.9);
   }
 
   .site-title {
@@ -962,9 +967,11 @@ nav a:focus {
     margin: .9rem 0 0 0;
   }
 
+
   // blog
   .sidebar-main {
     margin-bottom: 3.5em;
+    margin-top: 8rem;
   }
 
   .post-card-inner {
