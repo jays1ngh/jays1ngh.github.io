@@ -15,6 +15,6 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 
 See how the code block will look here.
 
-``` cmd
+```shell
 dpkg -i zabbix-release_5.0-1+focal_all.deb
 ```
