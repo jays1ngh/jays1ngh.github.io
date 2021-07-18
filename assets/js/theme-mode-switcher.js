@@ -1,6 +1,6 @@
 let darkMode = localStorage.getItem("darkMode");
 const darkModeToggle = document.querySelector("#theme-mode-icon");
-console.log(darkMode);
+// console.log(darkMode);
 
 // Check if dark mode is enabled
 // if it's enabled, turn it off
