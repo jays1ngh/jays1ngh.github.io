@@ -18,3 +18,13 @@ See how the code block will look here.
 ``` shell
 dpkg -i zabbix-release_5.0-1+focal_all.deb
 ```
+
+Highlight this way
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
