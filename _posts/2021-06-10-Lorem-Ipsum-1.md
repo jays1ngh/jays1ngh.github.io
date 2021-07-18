@@ -15,16 +15,6 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 
 See how the code block will look here.
 
-``` shell
+``` cmd
 dpkg -i zabbix-release_5.0-1+focal_all.deb
 ```
-
-Highlight this way
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
