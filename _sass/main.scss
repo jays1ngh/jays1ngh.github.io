@@ -132,22 +132,7 @@ h1 {
   margin:0;
 }
 
-// Anchor links
-.anchor-heading .anchor-link {
-  display: inline-block;
-  padding-left: .25rem;
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity ease-in-out .25s;
-}
-
-.anchor-heading .anchor-link:hover {
-  opacity: 1 !important;
-}
-
-.anchor-heading:hover .anchor-link {
-  opacity: .5;
-}
+// footer
 
 footer {
   text-align: center;
@@ -157,7 +142,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* ==================
+/* ===================
       Typography
 ===================== */
 
@@ -566,16 +551,25 @@ a:focus {
   display: inline-block;
   padding-left: .50rem;
   text-decoration: none;
-  opacity: 0;
-  transition: opacity ease-in-out .25s;
+  // opacity: 1;
+  // transition: opacity ease-in-out .25s;
 }
 
-.anchor-link:hover {
-  opacity: 1 !important;
+// .anchor-link:hover {
+//   opacity: 1 !important;
+// }
+
+// .anchor-link {
+//   opacity: 0;
+// }
+
+.fa-link {
+  font-size: 1rem;
+  color: var(--font-dark);
 }
 
-.anchor-link {
-  opacity: 0;
+.fa-link:hover {
+  color: var(--font-primary);
 }
 
 // Copy Clipboard
