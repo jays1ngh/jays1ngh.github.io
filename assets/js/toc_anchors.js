@@ -1,3 +1,4 @@
+
 //  select all h2 tags in class post-detail
 var headings = document.querySelectorAll(".post-detail h2");
 
@@ -33,10 +34,12 @@ headings.forEach (function(heading) {
     // **************************
     // Create anchors for h2 tags
     // **************************
-
+    const anchorIcon = '<i class="fas fa-link"></i>';
     anchor = document.createElement("a");
     anchor.className = 'anchor-link';
     anchor.href = headingLink;
-    anchor.innerText = "#";
+    // Use if only want to display alpanumeric characters
+    // anchor.innerText = "#"
+    anchor.innerHTML = (anchorIcon);
     heading.appendChild(anchor);
 });
