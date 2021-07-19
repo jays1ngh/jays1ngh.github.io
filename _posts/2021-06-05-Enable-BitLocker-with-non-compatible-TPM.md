@@ -115,18 +115,21 @@ Endpoint
 Simply you can check the File Explorer and BitLocker can be seen on the drive or you can run a simple PowerShell to view BitLocker status.
 Check Info in Access work or school Settings, you should see BitLocker listed in one of the policies managed by your organization.
 
-3. Generate Advanced Diagnostic Report on the Info page in Access work or school Settings. Report will be saved in C:/Users/Public/Documents/MDMDiagnostics/MDMDiagReport.html. Look for BitLocker keyword, this will be listed under Managed Policies.
+1. Generate Advanced Diagnostic Report on the Info page in Access work or school Settings. Report will be saved in C:/Users/Public/Documents/MDMDiagnostics/MDMDiagReport.html. Look for BitLocker keyword, this will be listed under Managed Policies.
 
+```
 C:\Users\Public\Documents\MDMDiagnostics
+```
+<br>
 
-4. Similar information as stated in Step 3 can also be gathered through registry keys. This information is stored in the following:
+<br>
 
-```cmd
+3. Event Viewer will have registered events in Applications and Services log > Microsoft > Windows > BitLocker API
+
+```powershell
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker
 ```
-
-5. Event Viewer will have registered events in Applications and Services log > Microsoft > Windows > BitLocker API
-
+<br>
 
 ## Feedback
 Your feedback is important and leave your thoughts in the comments below.
