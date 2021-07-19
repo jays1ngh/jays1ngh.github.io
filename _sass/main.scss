@@ -582,6 +582,7 @@ width: 25%;
   &::after {
     content: "📋";
     display: block;
+    margin-left: .25rem;
   }
 
   // This class will be toggled via JavaScript
