@@ -18,16 +18,43 @@ See how the code block will look here.
 
 ``` shell
 dpkg -i zabbix-release_5.0-1+focal_all.deb
+wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
+dpkg -i zabbix-release_5.0-1+focal_all.deb
+sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade
+sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent mysql-server
 ```
+
+<br/><br/>
+Run the below command:
 
 ``` shell
 dpkg this too
 ```
 
+
+<br/><br/>
+Run the below command:
+
+```shell
+sudo apt update && sudo apt upgrade
+```
+
+<br/><br/>
+Run the below command:
 ```
 ping google.com
 ```
 
+
+<br/><br/>
+Run the below code:
+
 ```
 wmic bios get serialnumber
+```
+<br/><br/>
+Run the below code:
+```powershell
+New-NetFirewallRule -DisplayName "Allow inbound 10050" -Direction Inbound -Protocol TCP -Action Allow -LocalPort 10050 -Profile Domain
 ```
