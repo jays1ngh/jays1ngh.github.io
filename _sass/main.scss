@@ -622,6 +622,41 @@ a:focus {
   overflow-x: auto;
 }
 
+// Lightbox
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  display: none;
+}
+
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: black;
+  border: 2px solid white;
+  animation: fadeImage 500ms ease forwards;
+}
+
+@keyframes fadeImage {
+	from {
+    transform: scale(0);
+    opacity:0.3}
+	to {
+    transform: scale(1);
+    opacity:1.0}
+}
+
 /* ==================
     Categories Layout
 ===================== */
@@ -741,10 +776,13 @@ nav a:focus {
 }
 
 .post-detail img {
-  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  max-width: 783px;
+  text-align: center;
   height: auto;
+  cursor: pointer;
 }
 
 /* =====================
