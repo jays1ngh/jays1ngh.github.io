@@ -1,199 +1,48 @@
-/**
- * A simple JSON search
- * Requires jQuery (v 1.7+)
- *
- * @author  Mat Hayward - Erskine Design
- * @version  0.1
- */
+(function() {
+    var request = new XMLHttpRequest();
+    var searchBox = document.getElementById("search-box");
+    var resultBox = document.getElementById("search-results");
+    var posts;
+    var results;
+    var html = "";
 
+    request.onreadystatechange = function(e) {
 
- /* ==========================================================================
-    Initialisation
-    ========================================================================== */
+        // the request is done and successful.
+        if (request.readyState === 4 && request.status === 200) {
 
-    var q, jsonFeedUrl = "/feeds/feed.json",
-    $searchForm = $("[data-search-form]"),
-    $searchInput = $("[data-search-input]"),
-    $resultTemplate = $("#search-result"),
-    $resultsPlaceholder = $("[data-search-results]"),
-    $foundContainer = $("[data-search-found]"),
-    $foundTerm = $("[data-search-found-term]"),
-    $foundCount = $("[data-search-found-count]"),
-    allowEmpty = true,
-    showLoader = true,
-    loadingClass = "is--loading";
+            // parse the json response in to an array of objects.
+            posts = JSON.parse(request.responseText);
 
+            // filter the posts to those who's title contains text from the search box.
+            results = posts.filter(function(post) {
+                if (post.title.toLowerCase().indexOf(searchBox.value.trim().toLowerCase()) > -1) {
+                    return true;
+                }
+            });
+            console.log(searchBox.value.length);
+            console.log(results);
+            // if there are results, show a list item and link for each result.
+            if (results.length > 0 && searchBox.value.trim() != ""  && searchBox.value.length >= 3) {
+                
+                html += "<ul>";
+                for (var i = 0; i < results.length; i++) {
+                    html += "<li><a href=\"" + results[i].link + "\">" + results[i].title + "</a></li>";
+                }
+                html += "</ul>";
 
-$(document).ready( function() {
-    // hide items found string
-    $foundContainer.hide();
-
-    // initiate search functionality
-    initSearch();
-});
-
-
-
-
- /* ==========================================================================
-    Search functions
-    ========================================================================== */
- 
-
-/**
- * Initiate search functionality.
- * Shows results based on querystring if present.
- * Binds search function to form submission.
- */
-function initSearch() {
-
-    // Get search results if q parameter is set in querystring
-    if (getParameterByName('q')) {
-        q = decodeURIComponent(getParameterByName('q'));
-        $searchInput.val(q);
-        execSearch(q);
-    }
-
-    // Get search results on submission of form
-    $(document).on("submit", $searchForm, function(e) {
-        e.preventDefault();
-        q = $searchInput.val();
-        execSearch(q);
-    });
-}
-
-
-/**
- * Executes search
- * @param {String} q 
- * @return null
- */
-function execSearch(q) {
-    if (q != '' || allowEmpty) {
-        if (showLoader) {
-            toggleLoadingClass();
-        }
-
-        getSearchResults(processData());
-    }
-}
-
-
-/**
- * Toggles loading class on results and found string
- * @return null
- */
-function toggleLoadingClass() {
-    $resultsPlaceholder.toggleClass(loadingClass);
-    $foundContainer.toggleClass(loadingClass);
-}
-
-
-/**
- * Get Search results from JSON
- * @param {Function} callbackFunction 
- * @return null
- */
-function getSearchResults(callbackFunction) {
-    $.get(jsonFeedUrl, callbackFunction, 'json');
-}
-
-
-/**
- * Process search result data
- * @return null
- */
-function processData() {
-    $results = [];
-    
-    return function(data) {
-        
-        var resultsCount = 0,
-            results = "";
-
-        $.each(data, function(index, item) {
-            // check if search term is in content or title 
-            if (item.search_omit != "true" && (item.content.toLowerCase().indexOf(q.toLowerCase()) > -1 || item.title.toLowerCase().indexOf(q.toLowerCase()) > -1)) {
-                var result = populateResultContent($resultTemplate.html(), item);
-                resultsCount++;
-                results += result;
+                resultBox.innerHTML = html;
             }
-        });
-
-        if (showLoader) {
-            toggleLoadingClass();
         }
+    };
 
-        populateResultsString(resultsCount);
-        showSearchResults(results);
-    }
-}
+    // detect input on the search box.
+    searchBox.onkeyup = function(e) {
+        resultBox.innerHTML = "";
+        html = "";
+        results = [];
+        request.open("GET", "../search/search.json");
+        request.send();
+    };
+})();
 
-
-/**
- * Add search results to placeholder
- * @param {String} results
- * @return null
- */
-function showSearchResults(results) {
-    // Add results HTML to placeholder
-    $resultsPlaceholder.html(results);
-}
-
-
-/**
- * Add results content to item template
- * @param {String} html 
- * @param {object} item
- * @return {String} Populated HTML
- */
-function populateResultContent(html, item) {
-    html = injectContent(html, item.title, '##Title##');
-    html = injectContent(html, item.link, '##Url##');
-    html = injectContent(html, item.excerpt, '##Excerpt##');
-    html = injectContent(html, item.date, '##Date##');
-    return html;
-}
-
-
-/**
- * Populates results string
- * @param {String} count 
- * @return null
- */
-function populateResultsString(count) {
-    $foundTerm.text(q);
-    $foundCount.text(count);
-    $foundContainer.show();
-}
-
-
-
-
- /* ==========================================================================
-    Helper functions
-    ========================================================================== */
-
-
-/**
- * Gets query string parameter - taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
- * @param {String} name 
- * @return {String} parameter value
- */
-function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
-
-
-/**
- * Injects content into template using placeholder
- * @param {String} originalContent
- * @param {String} injection
- * @param {String} placeholder 
- * @return {String} injected content
- */
-function injectContent(originalContent, injection, placeholder) {
-    var regex = new RegExp(placeholder, 'g');
-    return originalContent.replace(regex, injection);
-}
