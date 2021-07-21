@@ -335,7 +335,7 @@ header {
 .recent-posts-widget,
 .categories-all-widget {
   border-radius: 2px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .post-title {
@@ -471,6 +471,7 @@ width: 25%;
 .post-data {
   background-color: var(--box-background);
   padding: 1em;
+  margin-bottom: 1em;
 }
 .post-media {
   margin-bottom: 1em;
@@ -491,7 +492,7 @@ width: 25%;
 
 .previous-next {
   display: flex;
-  background-color: var(--box-background);
+  // background-color: var(--box-background);
   justify-content: space-between;
   margin-bottom: 1em;
   padding: 1em;
@@ -514,20 +515,27 @@ width: 25%;
 .post-author-image {
   border-radius: 50%;
   display: block;
+  box-shadow: rgba(17, 17, 26, 0.5) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .author-info-brief {
   width: 60%;
 }
 
+.post-data,
+.post-author {
+    border-radius: 2px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  }
+
 // Table of contents
 #toc {
   width: max-content;
-  background: var(--box-background-other);
+  background: var(--box-background);
   padding: 2rem;
   margin-bottom: 1rem;
   border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 #toc li {
@@ -650,8 +658,8 @@ a:focus {
 
 @keyframes fadeImage {
 	from {
-    transform: scale(0);
-    opacity:0.3}
+    transform: scale(.5);
+    opacity:0.5}
 	to {
     transform: scale(1);
     opacity:1.0}
