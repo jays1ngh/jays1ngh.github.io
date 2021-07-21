@@ -20,14 +20,13 @@
                     return true;
                 }
             });
-            console.log(searchBox.value.length);
-            console.log(results);
             // if there are results, show a list item and link for each result.
             if (results.length > 0 && searchBox.value.trim() != ""  && searchBox.value.length >= 3) {
                 
                 html += "<ul>";
                 for (var i = 0; i < results.length; i++) {
-                    html += "<li><a href=\"" + results[i].link + "\">" + results[i].title + "</a></li>";
+                    // add URL from json "url"
+                    html += "<li><a href=\"" + results[i].url + "\">" + results[i].title + "</a></li>";
                 }
                 html += "</ul>";
 
