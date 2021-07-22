@@ -16,7 +16,7 @@
             }
         });
         
-        if (searchText.length > 3 && searchText.trim() != "" && searchResults.length > 0) {
+        if (searchText.length > 2 && searchText.trim() != "" && searchResults.length > 0) {
 
         outputHtml(searchResults);
         } 
