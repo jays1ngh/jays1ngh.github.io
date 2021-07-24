@@ -4,6 +4,7 @@ author: jays1ngh
 categories: jekyll
 date: 2021-06-05
 thumbnail: /assets/img/posts/develop-jekyll.png
+image: /assets/img/posts/develop-jekyll.png
 ---
 This is a test post
 

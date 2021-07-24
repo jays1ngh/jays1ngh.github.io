@@ -7,6 +7,7 @@ categories: jekyll
 date: 2021-05-28
 thumbnail: "/assets/img/posts/add-category-jekyll.png"
 permalink: /blog/add-category-to-jekyll-post
+image: "/assets/img/posts/add-category-jekyll.png"
 ---
 This is a test post to check how the category page will work
 

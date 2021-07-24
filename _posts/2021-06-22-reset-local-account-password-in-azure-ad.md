@@ -3,7 +3,8 @@ layout: post
 author: jays1ngh
 categories: AzureAD
 date: 2021-06-22
-thumbnail:
+thumbnail: /assets/img/posts/how-to-add-post-excerpts.png
+image: /assets/img/posts/how-to-add-post-excerpts.png
 ---
 When I try to reset password for a local user in Azure AD then I see the below error:
 
