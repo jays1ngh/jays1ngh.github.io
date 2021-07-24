@@ -4,30 +4,35 @@
     {% endfor %}
   </nav> -->
 
-  <div class="container container-nav">
-    <div class="site-title">
-        <h1 class="site-main-title"><a href="/">{{site.title}}</a></h1>
-        <p class="site-subtitle">{{site.subtitle}}</p>
-    </div>
+    
 
     <nav class="navbar">
-        <a href="#" class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <ul class="navbar-links">
+        <div class="logo">
+            <a href="/">
+                <h1 class="site-main-title">
+                    {{site.title}}
+                </h1>
+                <p class="site-subtitle">
+                    {{site.subtitle}}
+                </p>
+            </a>
+        </div>
+        <ul class="nav-links">
             {% for i in site.urls %}
             <!-- <li><a href="/" class="current-page">Home</a></li>
-            <li><a href="{{site.url}}{{site.baseurl}}/blog/">Blog</a></li>
-            <li><a href="{{site.url}}{{site.baseurl}}/about">About</a></li> -->
+                <li><a href="{{site.url}}{{site.baseurl}}/blog/">Blog</a></li>
+                <li><a href="{{site.url}}{{site.baseurl}}/about">About</a></li> -->
             <li>
                 <a href="{{ site.url}}{{site.baseurl}}{{ i.url }}">
                     {{ i.text }}</a>
             </li>
             {% endfor %}
-            <img src="/assets/img/web/moon.png" id="theme-mode-icon">
+            <i class="fas fa-adjust" id="theme-mode-icon"></i>
         </ul>
+    
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
-
-</div> <!-- / .container -->
