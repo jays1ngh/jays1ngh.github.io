@@ -388,6 +388,10 @@ nav {
   margin-top: .45em;
   margin-left: 1em;
   cursor: pointer;
+  color: var(--font-light);
+}
+
+#search-icon:hover {
   color: var(--font-dark);
 }
 
@@ -943,8 +947,13 @@ a:focus {
   }
 
   .nav-links li:first-child {
-    margin-top: 5em;
+    margin-top: 4em;
   }
+
+  .nav-links i:last-child {
+    margin-bottom: 5em;
+  }
+  
   .nav-links li,
   #theme-mode-icon,
   #search-icon {
@@ -1066,7 +1075,11 @@ a:focus {
   }
 
   .nav-links li:first-child {
-    margin-top: 5em;
+    margin-top: 4em;
+  }
+
+  .nav-links i:last-child {
+    margin-bottom: 5em;
   }
   .nav-links li,
   #theme-mode-icon,
@@ -1215,12 +1228,17 @@ a:focus {
   }
 
   .nav-links li:first-child {
-    margin-top: 5em;
+    margin-top: 4em;
   }
+
+  .nav-links i:last-child {
+    margin-bottom: 5em;
+  }
+
   .nav-links li,
   #theme-mode-icon,
   #search-icon {
-    margin-top: 2.5em;
+    margin-top: 2em;
   }
 
   #search-icon {
