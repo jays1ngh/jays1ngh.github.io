@@ -1,7 +1,7 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li, #theme-mode-icon')
+    const navLinks = document.querySelectorAll('.nav-links li, #theme-mode-icon, #search-icon')
     // Toggle Nav
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
@@ -21,3 +21,20 @@ const navSlide = () => {
 }
 
 navSlide();
+
+
+// Search
+
+const searchBtn = document.querySelector("#search-icon");
+const searchBox = document.querySelector("#search-fullscreen");
+const searchCloseBtn = document.querySelector("#search-close-btn");
+
+searchCloseBtn.addEventListener("click", () => {
+    searchBox.classList.remove('active');
+});
+
+searchBtn.addEventListener("click", () => {
+    searchBox.classList.toggle('active');
+    // focus on search box
+    document.getElementById("search-box1").focus();
+});
