@@ -1,47 +1,51 @@
-(function() {
-    var request = new XMLHttpRequest();
+(function(){
+
     var searchBox = document.getElementById("search-box");
     var resultBox = document.getElementById("search-results");
-    var posts;
-    var results;
-    var html = "";
-
-    request.onreadystatechange = function(e) {
-
-        // the request is done and successful.
-        if (request.readyState === 4 && request.status === 200) {
-
-            // parse the json response in to an array of objects.
-            posts = JSON.parse(request.responseText);
-
-            // filter the posts to those who's title contains text from the search box.
-            results = posts.filter(function(post) {
-                if (post.title.toLowerCase().indexOf(searchBox.value.trim().toLowerCase()) > -1) {
-                    return true;
-                }
-            });
-            // if there are results, show a list item and link for each result.
-            if (results.length > 0 && searchBox.value.trim() != ""  && searchBox.value.length >= 3) {
-                
-                html += "<ul>";
-                for (var i = 0; i < results.length; i++) {
-                    // add URL from json "url"
-                    html += "<li><a href=\"" + results[i].url + "\">" + results[i].title + "</a></li>";
-                }
-                html += "</ul>";
-
-                resultBox.innerHTML = html;
-            }
+    
+    const dataToSearch = async searchText => {
+        const response = await fetch('/search.json');
+        const allDataResults = await response.json();
+        if (response.status !==200) {
+            throw new console.error("Something went wrong with the search!");
         }
+        
+        let searchResults = allDataResults.filter(dataResult =>{
+            if (dataResult.title.toLowerCase().indexOf(searchText.trim().toLowerCase()) > -1) {
+                return true;
+            }
+        });
+
+        // Select top results only
+        // const selectedSearchResults = searchResults.slice(0,2);
+        // console.log("Top 2 only")
+        // console.log(selectedSearchResults);
+        
+        if (searchText.length > 2 && searchText.trim() != "" && searchResults.length > 0) {
+
+        outputHtml(searchResults);
+        } 
+        else {
+            searchResults = [];
+            resultBox.innerHTML = '';
+        }
+
     };
 
-    // detect input on the search box.
-    searchBox.onkeyup = function(e) {
-        resultBox.innerHTML = "";
-        html = "";
-        results = [];
-        request.open("GET", "../search/search.json");
-        request.send();
-    };
-})();
+    // Show search results
+    const outputHtml = searchResults => {
+        if (searchResults.length > 0) {
+            const html = searchResults.map(searchResult => `
+            <div class="search-card">
+                <a href="${searchResult.url}">${searchResult.title}</a>
+            </div>
+            `)
+            .join('');
 
+        resultBox.innerHTML = html;
+        }
+    }
+    
+    searchBox.addEventListener('input', () => dataToSearch(searchBox.value));
+        
+    })();

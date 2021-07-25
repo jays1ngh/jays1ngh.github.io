@@ -42,5 +42,5 @@ searchCloseBtn.addEventListener("click", () => {
 searchBtn.addEventListener("click", () => {
     searchBox.classList.toggle('active');
     // focus on search box
-    document.getElementById("search-box1").focus();
+    document.getElementById("search-box").focus();
 });
