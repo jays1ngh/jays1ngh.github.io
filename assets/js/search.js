@@ -1,7 +1,8 @@
 (function(){
 
     var searchBox = document.getElementById("search-box");
-    var resultBox = document.getElementById("search-results");
+    var searchResultsNumber = document.getElementById("search-results-number");
+    var searchCard = document.getElementById("search-card");
     
     const dataToSearch = async searchText => {
         const response = await fetch('/search.json');
@@ -15,36 +16,66 @@
                 return true;
             }
         });
+        console.log("top");
+        console.log(searchResults);
 
         // Select top results only
         // const selectedSearchResults = searchResults.slice(0,2);
         // console.log("Top 2 only")
         // console.log(selectedSearchResults);
-        
-        if (searchText.length > 2 && searchText.trim() != "" && searchResults.length > 0) {
+        updatedSearchText = searchText.trim().length;
+        console.log(updatedSearchText);
 
-        outputHtml(searchResults);
+        if (updatedSearchText > 0 && searchResults.length === 0) {
+            searchCard.classList.remove("active");
+            searchResultsNumber.classList.add("active");
+
+            while (searchResultsNumber.firstChild) {
+                searchResultsNumber.removeChild(searchResultsNumber.firstChild)
+            }
+            const searchResultsNumberContent = document.createElement("p");
+            searchResultsNumberContent.textContent = "No results found.";
+            searchResultsNumber.append(searchResultsNumberContent);
+        }
+        
+        else if (searchText.length > 0 && searchText.trim() != "" && searchResults.length > 0) {
+            searchResultsNumber.classList.remove("active");
+            searchCard.classList.add("active");
+            console.log(searchResults);
+
+            while (searchCard.firstChild) {
+                searchCard.removeChild(searchCard.firstChild);
+            }
+            searchResults.forEach(searchResult => {
+                const resultsBoxContent = document.createElement("p");
+                resultsBoxContent.textContent = searchResult.title;
+                // resultsBoxContent.href = searchResult.url;
+                searchCard.append(resultsBoxContent);
+            });
+
         } 
         else {
             searchResults = [];
-            resultBox.innerHTML = '';
+            // resultBox.innerHTML = '';
+            searchCard.innerText = '';
+            searchResultsNumber.classList.remove("active");
         }
 
     };
 
     // Show search results
-    const outputHtml = searchResults => {
-        if (searchResults.length > 0) {
-            const html = searchResults.map(searchResult => `
-            <div class="search-card">
-                <a href="${searchResult.url}">${searchResult.title}</a>
-            </div>
-            `)
-            .join('');
+    // const outputHtml = searchResults => {
+    //     if (searchResults.length > 0) {
+    //         const html = searchResults.map(searchResult => `
+    //         <div class="search-card">
+    //             <a href="${searchResult.url}">${searchResult.title}</a>
+    //         </div>
+    //         `)
+    //         .join('');
 
-        resultBox.innerHTML = html;
-        }
-    }
+    //     resultBox.innerHTML = html;
+    //     }
+    // }
     
     searchBox.addEventListener('input', () => dataToSearch(searchBox.value));
         
