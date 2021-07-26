@@ -16,8 +16,6 @@
                 return true;
             }
         });
-        console.log("top");
-        console.log(searchResults);
 
         // Select top results only
         // const selectedSearchResults = searchResults.slice(0,2);
@@ -56,26 +54,11 @@
         } 
         else {
             searchResults = [];
-            // resultBox.innerHTML = '';
             searchCard.innerText = '';
             searchResultsNumber.classList.remove("active");
         }
 
     };
-
-    // Show search results
-    // const outputHtml = searchResults => {
-    //     if (searchResults.length > 0) {
-    //         const html = searchResults.map(searchResult => `
-    //         <div class="search-card">
-    //             <a href="${searchResult.url}">${searchResult.title}</a>
-    //         </div>
-    //         `)
-    //         .join('');
-
-    //     resultBox.innerHTML = html;
-    //     }
-    // }
     
     searchBox.addEventListener('input', () => dataToSearch(searchBox.value));
         
