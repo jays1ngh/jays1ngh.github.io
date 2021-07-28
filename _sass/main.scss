@@ -302,7 +302,7 @@ Navigation Global
 */
 .navbar {
   margin: 0 0 3rem 0;
-  padding: 0;
+  padding: .5em;
   box-sizing: border-box;
 }
 
@@ -315,13 +315,21 @@ nav {
 }
 
 .logo {
-  
+  text-align: center;
 }
 
 .site-main-title,
 .site-subtitle {
   color: var(--font-light);
-  letter-spacing: 5px;
+}
+
+.site-main-title {
+  letter-spacing: 6px;
+}
+
+.site-subtitle {
+  letter-spacing: 3px;
+  font-size: 400;
 }
 
 
