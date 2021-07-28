@@ -302,7 +302,6 @@ Navigation Global
 */
 .navbar {
   margin: 0 0 3rem 0;
-  padding: .5em;
   box-sizing: border-box;
 }
 
@@ -325,6 +324,7 @@ nav {
 
 .site-main-title {
   letter-spacing: 6px;
+  margin-top: 0;
 }
 
 .site-subtitle {
