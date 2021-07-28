@@ -8,6 +8,8 @@ image: /assets/img/posts/ms-forms.png
 ---
 Something strange happened and all of a sudden I could not find my personal/all Microsoft forms on forms.microsoft.com and I looked everywhere to figure out where my all Microsoft forms were stored.
 
+{% include youtube.html id='S04nvZB02vI' %}
+<br>
 Here is what I see after logging into forms.microsoft.com or after selecting Forms app in the available Microsoft 365 apps.
 
 ## Cause
