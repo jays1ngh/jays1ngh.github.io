@@ -1,3 +1,4 @@
+// Mobile navigation
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -44,3 +45,23 @@ searchBtn.addEventListener("click", () => {
     // focus on search box
     document.getElementById("search-box").focus();
 });
+
+// Slide to top button
+const scrollToTop = document.getElementById("scroll-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollToTop.style.display = "block";
+  } else {
+    scrollToTop.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
