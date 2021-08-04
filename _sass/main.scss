@@ -541,6 +541,7 @@ nav {
 
 .post-card-outer,
 .post-read-more,
+.post-read-more-button,
 .blog-img,
 .pagination-li a,
 .pagination-li span,
@@ -588,18 +589,17 @@ width: 25%;
 
 .post-read-more {
   float: right;
-  padding:0 .5rem;
-  background-color: var(--primary);
 }
 
-.post-read-more:hover,
-.post-read-more:focus {
+.post-read-more-button:hover,
+.post-read-more-button:focus {
   background-color: var(--button-hover);
 }
 
-// .sidebar-secondary {
-//   width: 25%;
-// }
+.post-read-more-button {
+  padding: .25em .5em;
+  background: var(--primary);
+}
 
 .recent-posts-widget {
   padding: 1em;
@@ -970,8 +970,9 @@ a:focus {
   border-radius: 10px;
 }
 
-#scroll-to-top:hover {
-  background-color: var(--link-hover);
+#scroll-to-top:hover,
+#scroll-to-top:focus {
+  background-color: var(--button-hover);
 }
 
 #scroll-to-top-icon {
