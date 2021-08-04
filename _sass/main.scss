@@ -591,6 +591,10 @@ width: 25%;
   float: right;
 }
 
+.post-read-more-button:visited {
+
+}
+
 .post-read-more-button:hover,
 .post-read-more-button:focus {
   background-color: var(--button-hover);
@@ -970,8 +974,11 @@ a:focus {
   border-radius: 10px;
 }
 
-#scroll-to-top:hover,
 #scroll-to-top:focus {
+  background-color: var(--primary);
+}
+
+#scroll-to-top:hover {
   background-color: var(--button-hover);
 }
 
