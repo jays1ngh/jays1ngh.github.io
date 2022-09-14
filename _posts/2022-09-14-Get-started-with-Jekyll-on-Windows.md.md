@@ -32,7 +32,7 @@ Checkout the official [Jekyll](https://jekyllrb.com/) website and prerequisites 
 5. Let's confirm what we installed so far.
 - Ruby: Run below in CMD or PowerShell, and you should see the Ruby version number
 ```powershell
-Ruby -v updated
+Ruby -v
 ```
 - Gems: Check version of Gems in CMD or PowerShell
 ```powershell
