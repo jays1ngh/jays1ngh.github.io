@@ -32,20 +32,20 @@ Checkout the official [Jekyll](https://jekyllrb.com/) website and prerequisites 
 5. Let's confirm what we installed so far.
 - Ruby: Run below in CMD or PowerShell, and you should see the Ruby version number
 ```powershell
-Ruby -v
+Ruby -v updated
 ```
 - Gems: Check version of Gems in CMD or PowerShell
-```PowerShell
+```powershell
 gem -v
 ```
 Move forward if you have successfully checked Ruby and Gems version.
 
 6. Finally, install Jekyll and Bundler from a CMD. CMD is recommended but I ran from PowerShell and it worked just fine.
-```CMD
+```powershell
 gem install jekyll bundler
 ```
 
 7. We are done and check the Jekyll version in CMD or PowerShell
-```PowerShell
+```powershell
 jekyll -v
 ````
