@@ -15,8 +15,20 @@ Checkout the official [Jekyll](https://jekyllrb.com/) website and prerequisites 
 2. RubyGems
 3. GCC and Make
 
-### Ruby version 2.5.0 or higher
-Alright, let's go and download Ruby for Windows. Go to [RubyInstaller website](https://rubyinstaller.org/) and hit the big red *Download* button. This will take you to the next page where you select the installer. Go with the *WITH DEVKIT* as this will have the most compatible Gems. I downloaded the top in the list from *WITH DEVKIT*, version 3.1.2-1(64). Keep everything default checked and leave MSYS2 checked as well.
+## Install the prerequisites
+1. Alright, let's go and download Ruby for Windows. Go to [RubyInstaller website](https://rubyinstaller.org/) and hit the big red *Download* button. This will take you to the next page where you select the installer. Go with the *WITH DEVKIT* as this will have the most compatible Gems. I downloaded the top one from the list from *WITH DEVKIT*, version 3.1.2-1(64). 
+2. Run the downloaded exwe file. Keep everything default checked and leave MSYS2 checked as well.
 
 ![image](https://user-images.githubusercontent.com/72841224/190127486-79a57e23-f67c-4327-a905-856f8db5a373.png)
 
+3. Finish it off, by pressing the finish button on the final screen by keeping *Run ridk install* checked.
+
+![image](https://user-images.githubusercontent.com/72841224/190129586-6d4c39d8-281f-420d-904a-15cd4028b6ca.png)
+
+4. Installation is nearly done (nearly hehe), in the command windows select option 3 to complete it.
+
+![image](https://user-images.githubusercontent.com/72841224/190130148-a47e835a-aa2f-4711-8826-0a94dfab472d.png)
+
+5. Before we move on and get our hands dirty with real stuff, let's confirm what we installed so far.
+- Ruby: Run the following in CMD or PowerShell, and you should see the Ruby version number
+`Ruby -v`
