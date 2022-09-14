@@ -40,7 +40,7 @@ gem -v
 ```
 Move forward if you have successfully checked Ruby and Gems version.
 
-6. Finally, install Jekyll and Bundler from a CMD 
+6. Finally, install Jekyll and Bundler from a CMD. CMD is recommended but I ran from PowerShell and it worked just fine.
 ```CMD
 gem install jekyll bundler
 ```
