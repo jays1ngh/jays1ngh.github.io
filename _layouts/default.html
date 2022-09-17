@@ -12,8 +12,14 @@
 
   <body>
 
-    <div id="loading">
-      <img id="loading-image" src="/assets/img/web/loading.gif" alt="Loading..." />
+    <div id = "spinner-wrapper">
+      <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
     </div>
 
     {% include navigation-beta.html %}
@@ -36,7 +42,7 @@
 
          <!-- Page loading div-->
          <script>
-          var loader = document.getElementById("loading");
+          var loader = document.getElementById("spinner-wrapper");
           window.addEventListener("load", function(){
             loader.style.display = "none";
           })
