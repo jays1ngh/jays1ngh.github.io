@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    
+
     <div id="loading">
       <img id="loading-image" src="/assets/img/web/book-loading.gif" alt="Loading..." />
     </div>
@@ -33,5 +33,13 @@
          <script src="/assets/js/toc_anchors.js"></script>
          <script src="/assets/js/main.js"></script>
          <script src="/assets/js/theme-mode-switcher.js"></script>
+
+         <!-- Page loading div-->
+         <script>
+          var loader = document.getElementById("loading");
+          window.addEventListener("load", function(){
+            loader.style.display = "none";
+          })
+        </script>
   </body>
 </html>
